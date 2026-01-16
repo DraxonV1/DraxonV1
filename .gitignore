@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+/npm-debug.log*
+/yarn-error.log*
+/pnpm-debug.log*
+
+# Next.js Build Output
+.next/
+out/
+build/
+
+# Environment Variables (CRITICAL: Never push these!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Secrets / Keys
+*.pem
+*.key
+
+# Debugging and Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# IDE / Editor folders
+.visualstudio/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+/coverage
+
+# Vercel (if you ever use it)
+.vercel

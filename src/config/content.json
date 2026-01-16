@@ -1,0 +1,90 @@
+{
+  "hero": {
+    "badge": "Available for projects",
+    "title1": "Draxon",
+    "title2": "Minecraft Mod Developer (Fabric)",
+    "subtitle": "Minecraft Fabric mod developer focused on Minecraft 1.21+, performance-oriented utility mods, debugging tools, texture pack reviews, and sharing modding knowledge on YouTube",
+    "cta1": "View My Minecraft Mods",
+    "cta2": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am Draxon (DraxonV1), a Minecraft mod developer and content creator focused on Fabric API development and building clean, efficient gameplay enhancements for modern Minecraft.",
+    "journeyTitle": "My Journey as a Minecraft Mod Developer",
+    "journeyText": [
+      "I began my Minecraft modding journey with a strong interest in improving gameplay quality and accessibility through code. What started as small experiments quickly turned into structured Fabric mods.",
+      "I focus on Fabric API development for Minecraft 1.21+, prioritizing clean architecture, performance awareness, and compatibility with other mods and modpacks.",
+      "Alongside mod development, I share learning resources, texture pack reviews, and development insights through YouTube to help others get started with Minecraft modding."
+    ],
+    "stats": [
+      { "label": "Active Projects", "value": "Several" },
+      { "label": "Learning & Experimentation", "value": "Ongoing" }
+    ],
+    "faqTitle": "Quick Facts About Draxon"
+  },
+  "mods": {
+    "title": "Minecraft Mods & Projects",
+    "description": "Explore my growing collection of Minecraft Fabric mods available on CurseForge and Modrinth. These projects focus on utilities, debugging tools, and quality-of-life improvements for modern Minecraft."
+  },
+  "techInsights": {
+    "title": "Technical Insights & Development Approach",
+    "description": "An overview of how I structure Minecraft Fabric mods while learning, experimenting, and improving performance and maintainability.",
+    "insights": [
+      {
+        "title": "Clean Fabric Mod Structure",
+        "description": "I follow modular design patterns and Fabric API conventions to keep my Minecraft mods easy to understand, extend, and maintain.",
+        "code": "public class ModInitializer implements DedicatedServerModInitializer {\n  @Override\n  public void onInitializeServer() {\n    ModItems.register();\n    ModBlocks.register();\n    ModEntities.register();\n  }\n}"
+      },
+      {
+        "title": "Early Performance Awareness",
+        "description": "Even as a starter, I pay close attention to tick usage and code efficiency, using mixins carefully to avoid unnecessary overhead.",
+        "code": "@Mixin(ServerWorld.class)\npublic class PerformanceMixin {\n  @Inject(method = \"tick\", at = @At(\"HEAD\"))\n  private void onTick(CallbackInfo ci) {\n    // Performance-conscious logic\n  }\n}"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Minecraft Development Showcase",
+    "description": "Highlights from my Minecraft modding experiments, UI work, and technical prototypes.",
+    "items": [
+      { "title": "Custom UI Experiments", "category": "Interface & UX", "color": "bg-coffee-900" },
+      { "title": "Gameplay Utilities", "category": "Minecraft Modding", "color": "bg-coffee-800" },
+      { "title": "Rendering Tests", "category": "Graphics & Rendering", "color": "bg-coffee-700" },
+      { "title": "Data-Driven Systems", "category": "Fabric API", "color": "bg-coffee-600" }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Interested in collaborating on a Minecraft mod, server project, or learning together? I’m open to discussions, feedback, and early-stage project opportunities.",
+    "email": "hello@draxon.asia",
+    "socials": {
+      "youtube": "https://youtube.com/@DraxonV1",
+      "github": "https://github.com/DraxonV1",
+      "modrinth": "https://modrinth.com/user/DraxonV1",
+      "curseforge": "https://curseforge.com/members/draxonv1",
+      "discord": "https://t.me/Draxono",
+      "twitter": "https://twitter.com/DraxonV1"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "q": "Who is Draxon?",
+        "a": "Draxon (DraxonV1) is a Minecraft mod developer learning and building Fabric API mods for modern Minecraft versions (1.21+), with a focus on utilities, debugging tools, and performance-aware design."
+      },
+      {
+        "q": "Where can I find Draxon's mods?",
+        "a": "Draxon's Minecraft mods are available on CurseForge and Modrinth under the username DraxonV1."
+      },
+      {
+        "q": "Does Draxon create YouTube videos?",
+        "a": "Yes. Draxon shares Fabric modding tutorials, learning experiences, texture pack reviews, and development insights on YouTube."
+      }
+    ]
+  },
+  "projects": {
+    "curseforgeIds": [1412285],
+    "modrinthIds": [],
+    "authorName": "DraxonV1"
+  }
+}
