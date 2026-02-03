@@ -115,7 +115,7 @@ export default function Sidebar() {
 
             {/* Name and handle */}
             <h2 className="mb-1 text-xl font-bold text-gradient">Draxon</h2>
-            <p className="font-mono text-sm text-dark-muted">@draxon.v9</p>
+            <p className="font-mono text-sm text-dark-muted">@draxono</p>
           </motion.div>
         </div>
 
@@ -185,7 +185,7 @@ export default function Sidebar() {
             </a>
           </div>
           <p className="text-center font-mono text-xs text-dark-muted">
-            © 2024 DraxonV1
+            © 2026 DraxonV1
           </p>
         </div>
       </motion.aside>
