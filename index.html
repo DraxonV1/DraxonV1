@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>DraxonV1 | Python Developer, Minecraft Modder & Automation Expert</title>
+    <meta name="description" content="Draxon (DraxonV1) - Professional Python developer specializing in automation, APIs, Discord bots, and Minecraft modding. Expert in backend development, web scraping, and custom tool creation.">
+    <meta name="keywords" content="Draxon, DraxonV1, Python Developer, Minecraft Mods, Modrinth, GitHub, Automation, Bot Developer, FastAPI, Flask, Discord Bot, Telegram Bot, Web Scraping, REST API, Minecraft Modding, Java Developer, Backend Developer, Full Stack Developer">
+    <meta name="author" content="Draxon">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devdraxon.in">
+
+    <meta name="twitter:site" content="@DraxonV1">
+    <meta name="twitter:creator" content="@DraxonV1">
+    <meta name="twitter:domain" content="devdraxon.in">
+
+    <meta property="article:author" content="Draxon">
+    <meta property="article:publisher" content="https://github.com/DraxonV1">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Draxon",
+      "alternateName": "DraxonV1",
+      "url": "https://devdraxon.in",
+      "image": "https://github.com/DraxonV1.png",
+      "jobTitle": "Python Developer",
+      "description": "Experienced Python developer specializing in automation, APIs, and Minecraft modding. Creates efficient backend systems, Discord/Telegram bots, web scrapers, and custom tools.",
+      "sameAs": [
+        "https://github.com/DraxonV1",
+        "https://www.youtube.com/@DraxonV1",
+        "https://modrinth.com/user/DraxonV1"
+      ],
+      "knowsAbout": ["Python", "Minecraft Modding", "API Development", "Web Scraping", "Discord Bots", "Telegram Bots", "FastAPI", "Flask", "Java", "SQL", "Git", "Automation", "Backend Development"]
+    }
+    </script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devdraxon.in/">
+    <meta property="og:title" content="DraxonV1 - Python Developer">
+    <meta property="og:description" content="Building high-performance Python tools and Minecraft modifications. Open for commissions.">
+    <meta property="og:image" content="https://github.com/DraxonV1.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://devdraxon.in/">
+    <meta property="twitter:title" content="DraxonV1 - Python Developer">
+    <meta property="twitter:description" content="Building high-performance Python tools and Minecraft modifications.">
+    <meta property="twitter:image" content="https://github.com/DraxonV1.png">
+
+    <!-- Libraries (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: {
+                            start: '#00f5a0',
+                            end: '#00d9f5',
+                            dark: '#050505',
+                            card: 'rgba(20, 25, 30, 0.7)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap');
+
+        body {
+            background-color: #050505;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(to bottom, #00f5a0, #00d9f5); 
+            border-radius: 4px; 
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #00f5a0, #00d9f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass:hover {
+            border-color: rgba(0, 245, 160, 0.3);
+            box-shadow: 0 0 15px rgba(0, 245, 160, 0.1);
+        }
+
+        /* Neon Glows */
+        .neon-border {
+            position: relative;
+            z-index: 1;
+        }
+        .neon-border::before {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            z-index: -1;
+            background: linear-gradient(135deg, #00f5a0, #00d9f5);
+            border-radius: inherit;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .neon-border:hover::before { opacity: 1; blur(5px); }
+
+        /* 3D Canvas */
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Tilt Effect */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+        .tilt-content {
+            transform: translateZ(20px);
+        }
+
+        /* Loader */
+        .loader {
+            border: 3px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            border-top: 3px solid #00f5a0;
+            width: 24px; height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Draxon",
+      "alternateName": "DraxonV1",
+      "url": "https://devdraxon.in",
+      "image": "https://github.com/DraxonV1.png",
+      "sameAs": [
+        "https://github.com/DraxonV1",
+        "https://www.youtube.com/@DraxonV1",
+        "https://modrinth.com/user/DraxonV1"
+      ],
+      "jobTitle": "Python Developer",
+      "knowsAbout": ["Python", "Minecraft Modding", "API Development", "Web Scraping"]
+    }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- 3D Background -->
+    <canvas id="canvas-bg"></canvas>
+
+    <!-- Sidebar / Nav -->
+    <nav class="fixed bottom-0 md:left-0 md:top-0 md:bottom-auto w-full md:w-20 md:h-screen glass z-50 flex md:flex-col justify-between items-center py-4 px-6 md:px-0 md:py-8 border-t md:border-t-0 md:border-r border-white/10">
+        <!-- Logo -->
+        <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-neon-start to-neon-end text-black font-bold text-xl mb-8 shadow-[0_0_15px_rgba(0,245,160,0.5)]">
+            D
+        </a>
+
+        <!-- Links -->
+        <div class="flex md:flex-col gap-8 w-full md:w-auto justify-between md:justify-center">
+            <a href="#home" class="text-2xl text-gray-400 hover:text-neon-start transition-colors tooltip-wrapper relative group">
+                <i class='bx bx-home-alt-2'></i>
+                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Home</span>
+            </a>
+            <a href="#about" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
+                <i class='bx bx-user'></i>
+                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">About</span>
+            </a>
+            <a href="#projects" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
+                <i class='bx bx-code-alt'></i>
+                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Code</span>
+            </a>
+            <a href="#mods" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
+                <i class='bx bxs-cube-alt'></i>
+                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Mods</span>
+            </a>
+            <a href="#support" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
+                <i class='bx bx-heart'></i>
+                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Support</span>
+            </a>
+            <a href="#contact" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
+                <i class='bx bx-message-square-dots'></i>
+                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Hire</span>
+            </a>
+        </div>
+
+        <!-- Social -->
+        <div class="hidden md:flex flex-col gap-4 mt-auto">
+            <a href="https://github.com/DraxonV1" target="_blank" rel="noopener noreferrer" class="text-xl text-gray-400 hover:text-white"><i class='bx bxl-github'></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="md:ml-20 min-h-screen relative z-10 p-6 md:p-12 lg:p-20 max-w-7xl mx-auto pb-24 md:pb-12">
+        
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[85vh] flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="space-y-6 lg:w-3/5 order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-start/30 bg-neon-start/5">
+                    <span class="w-2 h-2 rounded-full bg-neon-start animate-pulse"></span>
+                    <span class="text-neon-start text-xs font-mono font-bold tracking-wider uppercase">Open to Work</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    I am <span class="text-gradient">Draxon</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-lg leading-relaxed font-light">
+                    Python Developer &bull; Fast APIs &bull; Automation &bull; Minecraft Modding
+                </p>
+                <p class="text-gray-500 max-w-md text-sm">
+                    I build efficient backend systems and sometimes create immersive Minecraft modifications.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://t.me/draxono" target="_blank" rel="noopener noreferrer" class="neon-border bg-gray-900 text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-gray-800 transition-all">
+                        <i class='bx bxl-telegram text-xl'></i> Hire Me
+                    </a>
+                    <a href="https://github.com/DraxonV1" target="_blank" rel="noopener noreferrer" class="glass text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-white/5 transition-all">
+                        <i class='bx bxl-github text-xl'></i> GitHub
+                    </a>
+                </div>
+
+                <div class="flex gap-4 mt-8">
+                    <a href="https://modrinth.com/user/DraxonV1" target="_blank" class="text-gray-500 hover:text-neon-end text-sm transition-colors flex items-center gap-1"><i class='bx bx-cube'></i> Modrinth</a>
+                    <a href="https://www.youtube.com/@DraxonV1" target="_blank" class="text-gray-500 hover:text-red-500 text-sm transition-colors flex items-center gap-1"><i class='bx bxl-youtube'></i> YouTube</a>
+                </div>
+            </div>
+
+            <div class="lg:w-2/5 order-1 lg:order-2 flex justify-center perspective-container">
+                <div id="hero-card" class="tilt-card glass p-2 rounded-2xl w-64 h-64 md:w-80 md:h-80 relative group cursor-none">
+                    <img src="https://github.com/DraxonV1.png" alt="Draxon PFP" class="w-full h-full rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-2xl shadow-neon-start/20">
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-neon-start to-neon-end rounded-full blur-2xl opacity-40 animate-blob"></div>
+                    <div class="absolute top-4 right-4 tilt-content bg-black/80 backdrop-blur px-3 py-1 rounded-full border border-white/10">
+                        <span class="text-xs font-mono text-neon-start">v1.0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-20">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <i class='bx bx-user text-neon-start'></i> About Draxon
+            </h2>
+            <div class="glass p-8 rounded-2xl border-l-4 border-neon-start relative overflow-hidden mb-8">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-neon-end/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <p class="text-gray-300 text-lg leading-relaxed relative z-10 mb-6">
+                    I'm <span class="text-white font-semibold">Draxon</span> (DraxonV1 online). I specialize in Python development with a focus on writing clean, efficient code for backend systems, automation tools, and APIs. When I'm not wrestling with Python scripts, I dive into the Java ecosystem to develop mods for Minecraft, bringing new mechanics and features to the game. I love open-source and contribute whenever I can.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 relative z-10">
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-neon-start border border-neon-start/20">Python</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-neon-end border border-neon-end/20">Java (Fabric)</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-blue-400 border border-blue-400/20">HTML</span>
+                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-purple-400 border border-purple-400/20">Git</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass p-6 rounded-2xl border-t-2 border-neon-start">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class='bx bx-briefcase text-neon-start'></i> Experience
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-neon-start mt-2"></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Python Backend Development</h4>
+                                <p class="text-gray-400 text-sm">Built REST APIs using FastAPI and Flask, implemented database systems with SQL, and created scalable backend architectures for various applications.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-neon-start mt-2"></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Automation & Bots</h4>
+                                <p class="text-gray-400 text-sm">Developed Discord and Telegram bots for community management, automated data collection pipelines, and workflow automation scripts.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-neon-start mt-2"></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Minecraft Modding</h4>
+                                <p class="text-gray-400 text-sm">Created and published multiple Minecraft mods on Modrinth and CurseForge, specializing in Fabric mod development with custom game mechanics.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass p-6 rounded-2xl border-t-2 border-neon-end">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class='bx bx-rocket text-neon-end'></i> Featured Projects
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-neon-end mt-2"></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Discord Bots & Automation Tools</h4>
+                                <p class="text-gray-400 text-sm">Created feature-rich Discord bots with moderation, leveling systems, custom commands, and integrations with external APIs.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-neon-end mt-2"></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Web Scrapers & Data Extraction</h4>
+                                <p class="text-gray-400 text-sm">Built powerful web scrapers for data collection, monitoring price changes, and aggregating information from multiple sources.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-neon-end mt-2"></div>
+                            <div>
+                                <h4 class="font-semibold text-white">Minecraft Modifications</h4>
+                                <p class="text-gray-400 text-sm">Developed many Minecraft mods, adding new gameplay features, items, and systems to enhance the game.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects (GitHub) -->
+        <section id="projects" class="py-20">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                <h2 class="text-3xl font-bold flex items-center gap-3">
+                    <i class='bx bx-code-alt text-neon-start'></i> GitHub Repos
+                </h2>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <input type="text" id="repo-search" placeholder="Search repositories..." class="bg-black/40 border border-white/10 rounded-lg px-4 py-2 pl-10 text-sm text-gray-300 focus:outline-none focus:border-neon-start/50 w-64 md:w-80 transition-all">
+                        <i class='bx bx-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-500'></i>
+                    </div>
+                    <div id="github-status" class="text-xs text-gray-500 font-mono hidden md:block">Fetching...</div>
+                </div>
+            </div>
+
+            <!-- Featured Grid (Top 2) -->
+            <div id="featured-projects" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- All Projects Grid -->
+            <h3 class="text-xl font-semibold mb-4 text-gray-400">All Repositories</h3>
+            <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- Mods (Modrinth) -->
+        <section id="mods" class="py-20">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-bold flex items-center gap-3">
+                    <i class='bx bxs-cube-alt text-neon-end'></i> Minecraft Mods
+                </h2>
+                <div class="flex gap-2">
+                    <a href="https://modrinth.com/user/DraxonV1" target="_blank" class="text-xs bg-[#1bd96a]/10 text-[#1bd96a] px-2 py-1 rounded border border-[#1bd96a]/30">Modrinth</a>
+                    <a href="https://curseforge.com/members/DraxonV1" target="_blank" class="text-xs bg-[#f16436]/10 text-[#f16436] px-2 py-1 rounded border border-[#f16436]/30">CurseForge</a>
+                </div>
+            </div>
+            
+            <div id="modrinth-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected via JS -->
+                <div class="col-span-full text-center py-12 hidden" id="mod-loader">
+                    <div class="loader mx-auto mb-4"></div>
+                    <p class="text-gray-500">Loading Mods...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Hire -->
+        <section id="contact" class="py-20 mb-20">
+            <div class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-start to-neon-end"></div>
+                
+                <h2 class="text-4xl font-bold mb-4">Ready to Collaborate?</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    I am currently accepting commissions for Python automation, custom APIs, and Minecraft mod development.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left mb-12">
+                    <div class="bg-black/40 p-6 rounded-xl border border-white/5">
+                        <h3 class="text-neon-start font-bold mb-3">What I can build</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> Discord/Telegram Bots</li>
+                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> Web Scrapers & Automation scripts</li>
+                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> REST APIs (FastAPI/Flask)</li>
+                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> Minecraft Fabric/Forge Mods</li>
+                        </ul>
+                    </div>
+                    <div class="bg-black/40 p-6 rounded-xl border border-white/5 flex flex-col justify-center">
+                        <div class="space-y-4">
+                            <a href="https://t.me/draxono" target="_blank" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-3 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                <i class='bx bxl-telegram text-xl'></i> DM on Telegram (Recommended)
+                            </a>
+                            <div class="relative group">
+                                <div class="block w-full bg-[#5865F2]/20 text-[#5865F2] font-bold py-3 px-4 rounded-lg text-center border border-[#5865F2]/30 cursor-help flex items-center justify-center gap-2">
+                                    <i class='bx bxl-discord-alt text-xl'></i> @draxon.v11
+                                </div>
+                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-red-500/90 text-white text-xs py-1 px-3 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                    Unstable / Slow Replies
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="py-20 mb-20">
+            <div class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-neon-start/20">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-start to-neon-end"></div>
+                
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-neon-start/10 mb-6">
+                    <i class='bx bx-heart text-3xl text-neon-start'></i>
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-4">Support My Work</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    If you appreciate my open-source projects, mods, or tools, consider supporting me. Your support helps me continue creating and maintaining these projects for the community.
+                </p>
+
+                <button id="donate-btn" class="neon-border bg-gradient-to-r from-neon-start/20 to-neon-end/20 text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3 mx-auto hover:from-neon-start/30 hover:to-neon-end/30 transition-all">
+                    <i class='bx bx-donate-heart text-2xl'></i> Donate / Support
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 text-sm py-8 border-t border-white/5">
+            <p>&copy; <span id="year"></span> Draxon (DraxonV1). All rights reserved.</p>
+            <div class="flex justify-center gap-4 mt-2">
+                <a href="https://github.com/DraxonV1" class="hover:text-neon-start">GitHub</a>
+                <span class="text-gray-800">•</span>
+                <a href="https://t.me/draxono" class="hover:text-neon-start">Telegram</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10 shadow-2xl">
+            <div class="p-6 border-b border-white/10 flex justify-between items-start">
+                <div>
+                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                    <p id="modal-language" class="text-sm text-gray-500 mt-1"></p>
+                </div>
+                <button id="modal-close" class="text-gray-400 hover:text-white transition-colors">
+                    <i class='bx bx-x text-2xl'></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <p id="modal-description" class="text-gray-300 mb-6"></p>
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="bg-black/40 p-3 rounded-lg text-center">
+                        <div id="modal-stars" class="text-xl font-bold text-neon-start"></div>
+                        <div class="text-xs text-gray-500">Stars</div>
+                    </div>
+                    <div class="bg-black/40 p-3 rounded-lg text-center">
+                        <div id="modal-forks" class="text-xl font-bold text-neon-end"></div>
+                        <div class="text-xs text-gray-500">Forks</div>
+                    </div>
+                    <div class="bg-black/40 p-3 rounded-lg text-center">
+                        <div id="modal-issues" class="text-xl font-bold text-purple-400"></div>
+                        <div class="text-xs text-gray-500">Issues</div>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <a id="modal-github" href="#" target="_blank" class="flex-1 bg-gray-800 hover:bg-gray-700 text-white py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-colors">
+                        <i class='bx bxl-github text-xl'></i> View on GitHub
+                    </a>
+                    <button id="modal-close-btn" class="px-6 py-3 rounded-lg border border-white/20 text-gray-300 hover:bg-white/5 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="donate-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-neon-start/30 shadow-2xl">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i class='bx bx-heart text-neon-start'></i> Support Draxon
+                </h3>
+                <button id="donate-close" class="text-gray-400 hover:text-white transition-colors">
+                    <i class='bx bx-x text-2xl'></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-300 mb-6">Choose your preferred cryptocurrency to donate. Your support helps me continue creating open-source projects and Minecraft mods!</p>
+                
+                <div id="crypto-list" class="space-y-3 mb-6">
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="btc">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#F7931A]/20 flex items-center justify-center">
+                                <i class='bx bx-bitcoin text-[#F7931A] text-xl'></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Bitcoin</h4>
+                                <p class="text-xs text-gray-500 font-mono">bc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p7hpq5n</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="ltc">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#BFBBBB]/20 flex items-center justify-center">
+                                <span class="text-[#BFBBBB] font-bold">L</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Litecoin</h4>
+                                <p class="text-xs text-gray-500 font-mono">ltc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p6tmyvr</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="eth">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#627EEA]/20 flex items-center justify-center">
+                                <span class="text-[#627EEA] font-bold">Ξ</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Ethereum (ERC20)</h4>
+                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="sol">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#14F195]/20 flex items-center justify-center">
+                                <span class="text-[#14F195] font-bold">SOL</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Solana</h4>
+                                <p class="text-xs text-gray-500 font-mono">Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-polygon">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#8247E5]/20 flex items-center justify-center">
+                                <span class="text-[#8247E5] font-bold text-sm">₮</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">USDT (Polygon)</h4>
+                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-bep20">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#F3BA2F]/20 flex items-center justify-center">
+                                <span class="text-[#F3BA2F] font-bold text-sm">₮</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">USDT (BEP20)</h4>
+                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-erc20">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#26A17B]/20 flex items-center justify-center">
+                                <span class="text-[#26A17B] font-bold text-sm">₮</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">USDT (ERC20)</h4>
+                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-solana">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-[#14F195]/20 flex items-center justify-center">
+                                <span class="text-[#14F195] font-bold text-sm">₮</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">USDT (Solana)</h4>
+                                <p class="text-xs text-gray-500 font-mono">Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL</p>
+                            </div>
+                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="donation-form" class="hidden bg-black/40 p-6 rounded-xl border border-neon-start/30">
+                    <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                        <i class='bx bx-check-circle text-neon-start'></i> Thank You!
+                    </h4>
+                    <p class="text-gray-400 mb-4">Your support means a lot! Please let me know your name so I can thank you personally.</p>
+                    <input type="text" id="donor-name" placeholder="Your name or username" class="w-full bg-black/60 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-start/50 mb-4">
+                    <button id="submit-donation" class="w-full bg-gradient-to-r from-neon-start to-neon-end text-black font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">
+                        Submit & Close
+                    </button>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button id="donate-paid-btn" class="flex-1 bg-neon-start/20 hover:bg-neon-start/30 text-neon-start py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-colors border border-neon-start/30">
+                        <i class='bx bx-check text-xl'></i> I've Paid
+                    </button>
+                    <button id="donate-close-btn" class="px-6 py-3 rounded-lg border border-white/20 text-gray-300 hover:bg-white/5 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic Script -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const CACHE_DURATION = 1000 * 60 * 60;
+        let allRepos = [];
+
+        async function fetchWithCache(key, url, headers = {}) {
+            const cached = localStorage.getItem(key);
+            if (cached) {
+                const { timestamp, data } = JSON.parse(cached);
+                if (Date.now() - timestamp < CACHE_DURATION) return data;
+            }
+            try {
+                const res = await fetch(url, { headers });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                localStorage.setItem(key, JSON.stringify({ timestamp: Date.now(), data }));
+                return data;
+            } catch (e) {
+                console.warn(`Fetch failed for ${key}:`, e);
+                return null;
+            }
+        }
+        async function loadGitHub() {
+            const container = document.getElementById('all-projects');
+            const featured = document.getElementById('featured-projects');
+            const status = document.getElementById('github-status');
+            const searchInput = document.getElementById('repo-search');
+
+            const repos = await fetchWithCache(
+                'gh_repos', 
+                'https://api.github.com/users/DraxonV1/repos?sort=updated&per_page=100'
+            );
+
+            if (!repos) {
+                status.innerText = "Failed to load GitHub.";
+                return;
+            }
+
+            allRepos = repos;
+            status.innerText = `${repos.length} public repositories found`;
+            
+            const nonForks = repos.filter(r => !r.fork);
+            const sortedByStars = [...nonForks].sort((a, b) => b.stargazers_count - a.stargazers_count);
+            
+            const createCard = (repo, isFeatured = false) => {
+                const langColor = {
+                    'Python': '#3572A5',
+                    'Java': '#b07219',
+                    'HTML': '#e34c26',
+                    'JavaScript': '#f1e05a',
+                    'CSS': '#563d7c'
+                }[repo.language] || '#888';
+
+                return `
+                <div class="glass p-6 rounded-xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full border-t-2 ${isFeatured ? 'border-neon-start' : 'border-transparent hover:border-neon-start'} cursor-pointer" data-repo-name="${repo.name.toLowerCase()}">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-bold text-lg group-hover:text-neon-start transition-colors">${repo.name}</h3>
+                        <i class='bx bx-info-circle text-gray-500 group-hover:text-white'></i>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4 flex-grow line-clamp-3">${repo.description || 'No description available.'}</p>
+                    <div class="flex items-center justify-between text-xs text-gray-500 mt-auto pt-4 border-t border-white/5">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full" style="background-color: ${langColor}"></span>
+                            ${repo.language || 'Code'}
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="flex items-center gap-1"><i class='bx bx-star'></i> ${repo.stargazers_count}</span>
+                            <span class="flex items-center gap-1"><i class='bx bx-git-repo-forked'></i> ${repo.forks_count}</span>
+                        </div>
+                    </div>
+                </div>
+                `;
+            };
+
+            featured.innerHTML = sortedByStars.slice(0, 2).map(r => createCard(r, true)).join('');
+            
+            const renderProjects = (projects) => {
+                container.innerHTML = projects.slice(0, 12).map(r => createCard(r)).join('');
+                addCardListeners(projects.slice(0, 12));
+            };
+
+            renderProjects(nonForks.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)));
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const filtered = allRepos.filter(r => 
+                    r.name.toLowerCase().includes(query) || 
+                    (r.description && r.description.toLowerCase().includes(query))
+                );
+                const nonForksFiltered = filtered.filter(r => !r.fork);
+                renderProjects(nonForksFiltered);
+            });
+        }
+
+        function addCardListeners(projects) {
+            document.querySelectorAll('[data-repo-name]').forEach(card => {
+                card.addEventListener('click', () => {
+                    const repoName = card.dataset.repoName;
+                    const repo = projects.find(r => r.name.toLowerCase() === repoName);
+                    if (repo) openModal(repo);
+                });
+            });
+        }
+
+        function openModal(repo) {
+            const modal = document.getElementById('project-modal');
+            const langColor = {
+                'Python': '#3572A5',
+                'Java': '#b07219',
+                'HTML': '#e34c26',
+                'JavaScript': '#f1e05a',
+                'CSS': '#563d7c'
+            }[repo.language] || '#888';
+
+            document.getElementById('modal-title').textContent = repo.name;
+            document.getElementById('modal-language').innerHTML = `<span class="w-2 h-2 rounded-full inline-block mr-2" style="background-color: ${langColor}"></span>${repo.language || 'Code'}`;
+            document.getElementById('modal-description').textContent = repo.description || 'No description available.';
+            document.getElementById('modal-stars').textContent = repo.stargazers_count;
+            document.getElementById('modal-forks').textContent = repo.forks_count;
+            document.getElementById('modal-issues').textContent = repo.open_issues_count;
+            document.getElementById('modal-github').href = repo.html_url;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal-close').addEventListener('click', closeModal);
+        document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+        document.getElementById('project-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'project-modal') closeModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        const donateModal = document.getElementById('donate-modal');
+        const donationForm = document.getElementById('donation-form');
+
+        document.getElementById('donate-btn').addEventListener('click', () => {
+            donateModal.classList.remove('hidden');
+            donateModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeDonateModal() {
+            donateModal.classList.add('hidden');
+            donateModal.classList.remove('flex');
+            document.body.style.overflow = '';
+            donationForm.classList.add('hidden');
+            document.getElementById('donor-name').value = '';
+        }
+
+        document.getElementById('donate-close').addEventListener('click', closeDonateModal);
+        document.getElementById('donate-close-btn').addEventListener('click', closeDonateModal);
+        donateModal.addEventListener('click', (e) => {
+            if (e.target.id === 'donate-modal') closeDonateModal();
+        });
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const address = btn.parentElement.querySelector('.font-mono').textContent;
+                navigator.clipboard.writeText(address).then(() => {
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Copied!';
+                    btn.classList.add('bg-neon-start/40');
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.classList.remove('bg-neon-start/40');
+                    }, 2000);
+                });
+            });
+        });
+
+        document.getElementById('donate-paid-btn').addEventListener('click', () => {
+            donationForm.classList.remove('hidden');
+        });
+
+        document.getElementById('submit-donation').addEventListener('click', () => {
+            const name = document.getElementById('donor-name').value.trim();
+            if (name) {
+                alert(`Thank you so much, ${name}! Your support is greatly appreciated! 💚`);
+            } else {
+                alert('Thank you so much for your support! It means a lot! 💚');
+            }
+            closeDonateModal();
+        });
+
+        async function loadModrinth() {
+            const container = document.getElementById('modrinth-projects');
+            const loader = document.getElementById('mod-loader');
+            loader.classList.remove('hidden');
+
+            const res = await fetchWithCache(
+                'mr_projects',
+                'https://api.modrinth.com/v2/search?facets=[["author:DraxonV1"]]&limit=6',
+                { 'User-Agent': 'DraxonV1-Portfolio/1.0 (devdraxon.in)' }
+            );
+
+            loader.classList.add('hidden');
+
+            if (!res || !res.hits || res.hits.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center text-gray-500">No mods found on Modrinth yet or API limited. <a href="https://modrinth.com/user/DraxonV1" class="text-neon-start underline">View Profile</a></div>`;
+                return;
+            }
+
+            container.innerHTML = res.hits.map(mod => `
+                <a href="https://modrinth.com/project/${mod.slug}" target="_blank" class="glass p-0 rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(0,245,160,0.1)] transition-all">
+                    <div class="h-32 bg-gray-800 relative overflow-hidden">
+                        ${mod.icon_url 
+                            ? `<img src="${mod.icon_url}" alt="${mod.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 blur-sm group-hover:blur-0">`
+                            : `<div class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center"><i class='bx bxs-cube text-4xl text-gray-700'></i></div>`
+                        }
+                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
+                            <h3 class="font-bold text-lg text-white group-hover:text-neon-end transition-colors">${mod.title}</h3>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-400 text-sm line-clamp-2 mb-4 h-10">${mod.description}</p>
+                        <div class="flex items-center justify-between text-xs font-mono text-gray-500">
+                            <span class="flex items-center gap-1"><i class='bx bx-download'></i> ${mod.downloads.toLocaleString()}</span>
+                            <span class="flex items-center gap-1"><i class='bx bx-heart'></i> ${mod.follows.toLocaleString()}</span>
+                        </div>
+                        <div class="mt-3 flex gap-2 overflow-hidden">
+                            ${mod.categories.slice(0, 3).map(cat => 
+                                `<span class="px-2 py-0.5 bg-white/5 rounded text-[10px] uppercase tracking-wider text-gray-400">${cat}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        function init3D() {
+            const canvas = document.getElementById('canvas-bg');
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x050505, 0.002);
+
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 50;
+
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = window.innerWidth < 768 ? 700 : 1500;
+            const posArray = new Float32Array(particlesCount * 3);
+            const colorsArray = new Float32Array(particlesCount * 3);
+
+            const color1 = new THREE.Color(0x00f5a0);
+            const color2 = new THREE.Color(0x00d9f5);
+
+            for(let i = 0; i < particlesCount * 3; i+=3) {
+                posArray[i] = (Math.random() - 0.5) * 100;
+                posArray[i+1] = (Math.random() - 0.5) * 100;
+                posArray[i+2] = (Math.random() - 0.5) * 100;
+
+                const color = Math.random() > 0.5 ? color1 : color2;
+                colorsArray[i] = color.r;
+                colorsArray[i+1] = color.g;
+                colorsArray[i+2] = color.b;
+            }
+
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 0.15,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+            });
+
+            const particlesMesh = new THREE.Points(particlesGeometry, material);
+            scene.add(particlesMesh);
+
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX - windowHalfX);
+                mouseY = (event.clientY - windowHalfY);
+                
+                const heroCard = document.getElementById('hero-card');
+                if (heroCard) {
+                    const rect = heroCard.getBoundingClientRect();
+                    const cardX = rect.left + rect.width / 2;
+                    const cardY = rect.top + rect.height / 2;
+                    const angleX = (event.clientY - cardY) / 25;
+                    const angleY = (event.clientX - cardX) / -25;
+                    heroCard.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+                }
+            });
+
+            const clock = new THREE.Clock();
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                targetX = mouseX * 0.001;
+                targetY = mouseY * 0.001;
+
+                particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
+                particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
+                
+                particlesMesh.rotation.z += 0.001;
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            init3D();
+            loadGitHub();
+            loadModrinth();
+        });
+
+    </script>
+</body>
+</html>
