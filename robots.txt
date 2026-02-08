@@ -2,3 +2,9 @@ User-agent: *
 Allow: /
 
 Sitemap: https://devdraxon.in/sitemap.xml
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
