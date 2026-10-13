@@ -1,1021 +1,345 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/png" href="Draxonv1.png">
-    <link rel="shortcut icon" href="https://github.com/DraxonV1.png">
-    <link rel="apple-touch-icon" href="https://github.com/DraxonV1.png">
-
-    <title>DraxonV1 | Python Developer, Minecraft Modder & Automation Expert</title>
-    <meta name="description" content="Draxon (DraxonV1) - Professional Python developer specializing in automation, APIs, Discord bots.">
-    <meta name="keywords" content="Draxon, DraxonV1, Python Developer, Minecraft Mods, Modrinth, GitHub, Automation, Bot Developer, FastAPI, Flask, Discord Bot, Telegram Bot, Web Scraping, REST API, Minecraft Modding, Java Developer, Backend Developer, Full Stack Developer">
-    <meta name="author" content="Draxon">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://devdraxon.in">
-
-    <meta name="twitter:site" content="@DraxonV1">
-    <meta name="twitter:creator" content="@DraxonV1">
-    <meta name="twitter:domain" content="devdraxon.in">
-
-    <meta property="article:author" content="Draxon">
-    <meta property="article:publisher" content="https://github.com/DraxonV1">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Draxon",
-      "alternateName": "DraxonV1",
-      "url": "https://devdraxon.in",
-      "image": "https://github.com/DraxonV1.png",
-      "jobTitle": "Python Developer",
-      "description": "Experienced Python developer specializing in automation, APIs, and Minecraft modding. Creates efficient backend systems, Discord/Telegram bots, web scrapers, and custom tools.",
-      "sameAs": [
-        "https://github.com/DraxonV1",
-        "https://www.youtube.com/@DraxonV1",
-        "https://modrinth.com/user/DraxonV1"
-      ],
-      "knowsAbout": ["Python", "Minecraft Modding", "API Development", "Web Scraping", "Discord Bots", "Telegram Bots", "FastAPI", "Flask", "Java", "SQL", "Git", "Automation", "Backend Development"]
-    }
-    </script>
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://devdraxon.in/">
-    <meta property="og:title" content="DraxonV1 - Python Developer">
-    <meta property="og:description" content="Building high-performance Python tools and Minecraft modifications. Open for commissions.">
-    <meta property="og:image" content="https://github.com/DraxonV1.png">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://devdraxon.in/">
-    <meta property="twitter:title" content="DraxonV1 - Python Developer">
-    <meta property="twitter:description" content="Building high-performance Python tools and Minecraft modifications.">
-    <meta property="twitter:image" content="https://github.com/DraxonV1.png">
-
-    <!-- Libraries (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        neon: {
-                            start: '#00f5a0',
-                            end: '#00d9f5',
-                            dark: '#050505',
-                            card: 'rgba(20, 25, 30, 0.7)'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom Styles -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;600&display=swap');
-
-        body {
-            background-color: #050505;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { 
-            background: linear-gradient(to bottom, #00f5a0, #00d9f5); 
-            border-radius: 4px; 
-        }
-
-        /* Gradient Text */
-        .text-gradient {
-            background: linear-gradient(135deg, #00f5a0, #00d9f5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass:hover {
-            border-color: rgba(0, 245, 160, 0.3);
-            box-shadow: 0 0 15px rgba(0, 245, 160, 0.1);
-        }
-
-        /* Neon Glows */
-        .neon-border {
-            position: relative;
-            z-index: 1;
-        }
-        .neon-border::before {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            z-index: -1;
-            background: linear-gradient(135deg, #00f5a0, #00d9f5);
-            border-radius: inherit;
-            opacity: 0.5;
-            transition: opacity 0.3s;
-        }
-        .neon-border:hover::before { opacity: 1; blur(5px); }
-
-        /* 3D Canvas */
-        #canvas-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.6;
-            pointer-events: none;
-        }
-
-        /* Tilt Effect */
-        .tilt-card {
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-        }
-        .tilt-content {
-            transform: translateZ(20px);
-        }
-
-        /* Loader */
-        .loader {
-            border: 3px solid rgba(255,255,255,0.1);
-            border-radius: 50%;
-            border-top: 3px solid #00f5a0;
-            width: 24px; height: 24px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Draxon",
-      "alternateName": "DraxonV1",
-      "url": "https://devdraxon.in",
-      "image": "https://github.com/DraxonV1.png",
-      "sameAs": [
-        "https://github.com/DraxonV1",
-        "https://www.youtube.com/@DraxonV1",
-        "https://modrinth.com/user/DraxonV1"
-      ],
-      "jobTitle": "Python Developer",
-      "knowsAbout": ["Python", "Minecraft Modding", "API Development", "Web Scraping"]
-    }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14">
+  <title>DraxonV1 — Python, Reverse Engineering & Automation</title>
+  <meta name="description" content="DraxonV1 builds Python automation tools, investigates how web systems work, and develops practical developer services including DraxonCloud.">
+  <meta name="keywords" content="Draxon, DraxonV1, Python developer, reverse engineering, web automation, website analysis, proxy infrastructure, API integrations, DraxonCloud, Draxon Solver, DraxonMails">
+  <meta name="author" content="DraxonV1">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://devdraxon.in">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://devdraxon.in/">
+  <meta property="og:title" content="DraxonV1 — Python, Reverse Engineering & Automation">
+  <meta property="og:description" content="Building tools, exploring web systems, and automating workflows.">
+  <meta property="og:image" content="https://github.com/DraxonV1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DraxonV1 — Python, Reverse Engineering & Automation">
+  <meta name="twitter:description" content="Building tools, exploring web systems, and automating workflows.">
+  <meta name="twitter:image" content="https://github.com/DraxonV1.png">
+  <link rel="icon" href="https://github.com/DraxonV1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark;--bg:#080b14;--panel:#0d1220;--panel2:#10182a;--text:#f3f6ff;--muted:#9aa6bd;--line:rgba(163,180,219,.15);--blue:#6d8dff;--cyan:#65e5ed;--purple:#a78bfa;--radius:22px;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 15% 5%,rgba(69,94,210,.18),transparent 38%),radial-gradient(ellipse at 85% 25%,rgba(35,175,202,.10),transparent 32%),linear-gradient(180deg,#080b14,#090d17 55%,#080b14)}
+    body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(180,196,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(180,196,255,.045) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .mono{font-family:"DM Mono",monospace}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#b6c5ff;font:500 12px "DM Mono",monospace;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:24px;height:1px;background:var(--cyan)}
+    .gradient{background:linear-gradient(110deg,#f4f7ff 5%,#9fb4ff 48%,#65e5ed 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(163,180,219,.11);background:rgba(8,11,20,.78);backdrop-filter:blur(18px)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.04em;font-size:18px}
+    .brand-mark{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#07101d;font-weight:900;box-shadow:0 7px 28px #5579ff35}
+    .brand small{display:block;color:var(--muted);font:10px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase;margin-top:-3px}
+    .nav-links{display:flex;align-items:center;gap:28px;color:#b2bdd2;font-size:13px;font-weight:700}
+    .nav-links a:hover{color:white}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 17px;border:1px solid rgba(142,165,255,.28);border-radius:12px;background:linear-gradient(135deg,#7891ff,#5d72d9);color:#fff;font-size:13px;font-weight:800;box-shadow:0 8px 26px #526ee926;transition:transform .2s,border-color .2s,filter .2s}
+    .nav-cta:hover,.button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .button.secondary{background:rgba(255,255,255,.035);box-shadow:none;border-color:var(--line);color:#e3e9fa}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:9px 12px}
+    .hero{min-height:690px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px;padding-top:76px;padding-bottom:95px}
+    .hero h1{font-size:clamp(44px,6.2vw,76px);letter-spacing:-.075em;line-height:1.04;margin:22px 0 24px;max-width:720px}
+    .hero-copy{max-width:610px;color:#aab5cb;font-size:17px;line-height:1.85}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .social-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:29px;color:#8996b1;font:12px "DM Mono",monospace}
+    .social-row a:hover{color:var(--cyan)}
+    .hero-art{position:relative;min-height:420px;display:grid;place-items:center}
+    .orbit{position:absolute;width:min(390px,90%);aspect-ratio:1;border:1px solid rgba(130,157,255,.2);border-radius:50%;animation:rotate 28s linear infinite}
+    .orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(101,229,237,.18)}
+    .orbit:before{inset:25px}.orbit:after{inset:58px}
+    .orbit-dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan);top:12%;left:22%}
+    .profile-card{position:relative;width:min(330px,82%);padding:22px;border-radius:26px;border:1px solid rgba(166,185,255,.23);background:linear-gradient(145deg,rgba(24,34,59,.93),rgba(11,16,29,.92));box-shadow:0 35px 100px #0008,0 0 70px #617eff12;transform:rotate(-3deg)}
+    .profile-top{display:flex;align-items:center;gap:14px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+    .avatar{width:62px;height:62px;border-radius:18px;object-fit:cover;border:1px solid #a5b5ff55}
+    .profile-name{font-weight:800;font-size:17px}.profile-handle{color:var(--muted);font:12px "DM Mono",monospace}
+    .status{display:inline-flex;align-items:center;gap:7px;margin-top:7px;color:#9ae7d3;font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.08em}
+    .status:before{content:"";width:6px;height:6px;border-radius:50%;background:#58d9ad;box-shadow:0 0 10px #58d9ad}
+    .terminal{padding:19px 0 4px;font:12px/2 "DM Mono",monospace;color:#a6b4d0}
+    .terminal .prompt{color:var(--cyan)}.terminal .value{color:#dbe4ff}.terminal .comment{color:#677590}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:15px}
+    .mini-stat{padding:11px 8px;background:#ffffff06;border:1px solid #ffffff0b;border-radius:12px;text-align:center}
+    .mini-stat strong{display:block;font-size:14px}.mini-stat span{font:9px "DM Mono",monospace;color:#7f8ca8;text-transform:uppercase}
+    .float-tag{position:absolute;padding:10px 13px;background:#10182a;border:1px solid var(--line);border-radius:12px;color:#cbd6f1;font:11px "DM Mono",monospace;box-shadow:0 12px 35px #0005}
+    .tag-one{top:12%;right:0}.tag-two{bottom:11%;left:0}
+    section{padding:82px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
+    .section-head h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.06em;line-height:1.15;margin:13px 0 0}
+    .section-head p{max-width:430px;margin:0;color:var(--muted);font-size:14px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .panel{background:linear-gradient(145deg,rgba(18,25,43,.88),rgba(12,17,30,.86));border:1px solid var(--line);border-radius:var(--radius);padding:27px;box-shadow:0 18px 55px #00000012}
+    .panel h3{font-size:17px;letter-spacing:-.03em;margin:0 0 12px}
+    .panel p{margin:0;color:var(--muted);font-size:14px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}
+    .chip{border:1px solid rgba(147,169,255,.18);background:#718bff0b;color:#c5d0f0;padding:7px 10px;border-radius:9px;font:11px "DM Mono",monospace}
+    .focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .focus-card{padding:23px;border:1px solid var(--line);border-radius:18px;background:rgba(16,23,39,.68);transition:transform .22s,border-color .22s,background .22s}
+    .focus-card:hover{transform:translateY(-4px);border-color:#748cff55;background:#121b30}
+    .icon-box{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#b7c5ff;background:linear-gradient(135deg,#7891ff22,#65e5ed12);border:1px solid #8da6ff22;font-size:18px}
+    .focus-card h3{margin:18px 0 8px;font-size:16px}.focus-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+    .cloud-panel{position:relative;overflow:hidden;padding:clamp(25px,5vw,52px);border-radius:28px;border:1px solid #718cff42;background:linear-gradient(115deg,rgba(24,35,67,.96),rgba(12,23,39,.94) 65%,rgba(15,47,59,.86))}
+    .cloud-panel:after{content:"";position:absolute;width:340px;height:340px;right:-120px;top:-150px;border-radius:50%;background:#6d8dff20;filter:blur(20px);pointer-events:none}
+    .cloud-content{position:relative;z-index:1;display:grid;grid-template-columns:1fr .8fr;gap:45px;align-items:center}
+    .cloud-label{display:inline-flex;padding:7px 10px;border-radius:8px;background:#65e5ed10;border:1px solid #65e5ed30;color:#91f1f0;font:10px "DM Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+    .cloud-panel h2{font-size:clamp(34px,4.7vw,52px);line-height:1.08;letter-spacing:-.07em;margin:18px 0}
+    .cloud-panel p{color:#aebbd1;font-size:14px;max-width:560px}
+    .cloud-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .cloud-item{display:flex;align-items:center;gap:10px;padding:13px;border:1px solid #ffffff12;background:#080d1780;border-radius:12px;font-size:12px;color:#d8e2f7}
+    .cloud-item span{color:var(--cyan);font-size:15px}
+    .cloud-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}
+    .project-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .repo-status{font:11px "DM Mono",monospace;color:#8391ad}
+    .repo-search{width:min(300px,100%);background:#0d1321;border:1px solid var(--line);border-radius:11px;padding:11px 13px;color:white;outline:none}
+    .repo-search:focus{border-color:#718cff80}
+    .repo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .repo-card{display:flex;flex-direction:column;min-height:190px;padding:21px;border-radius:17px;background:#0e1422;border:1px solid var(--line);transition:transform .2s,border-color .2s}
+    .repo-card:hover{transform:translateY(-3px);border-color:#718cff66}
+    .repo-title{font-size:14px;font-weight:800;overflow-wrap:anywhere}.repo-desc{font-size:12px;color:var(--muted);margin:10px 0 18px;flex:1}
+    .repo-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:13px;border-top:1px solid #ffffff0b;color:#8290ab;font:10px "DM Mono",monospace}
+    .repo-language:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--blue);margin-right:7px}
+    .empty-state{grid-column:1/-1;padding:35px;text-align:center;border:1px dashed var(--line);border-radius:16px;color:var(--muted);font-size:13px}
+    .services-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}
+    .service-list{display:grid;gap:10px}
+    .service-row{display:flex;gap:15px;align-items:flex-start;padding:18px;border-radius:15px;background:#0e1422;border:1px solid var(--line)}
+    .service-row .icon-box{flex:0 0 42px}
+    .service-row h3{margin:0 0 4px;font-size:14px}.service-row p{margin:0;color:var(--muted);font-size:12px}
+    .contact-box{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:clamp(25px,4vw,40px);border-radius:23px;border:1px solid var(--line);background:linear-gradient(120deg,#10192c,#0e1723)}
+    .contact-box h2{font-size:clamp(27px,4vw,38px);letter-spacing:-.06em;margin:12px 0}
+    .contact-box p{margin:0;color:var(--muted);font-size:14px;max-width:510px}
+    .donation-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .wallet{padding:15px;background:#0d1320;border:1px solid var(--line);border-radius:13px;min-width:0}
+    .wallet-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px}
+    .wallet-name{font-size:12px;font-weight:800}.wallet-network{color:#8d9bb7;font:10px "DM Mono",monospace}
+    .wallet-address{font:10px/1.7 "DM Mono",monospace;color:#aab7d0;overflow-wrap:anywhere;word-break:break-word}
+    .copy-btn{border:1px solid #718cff4a;background:#718cff12;color:#c9d4ff;border-radius:8px;padding:6px 9px;font-size:10px;cursor:pointer;white-space:nowrap}
+    .copy-btn:hover{background:#718cff28}
+    .notice{font-size:11px;color:#8d9bb7;margin-top:14px}
+    footer{padding:32px 0 100px;border-top:1px solid var(--line);color:#7f8ca6;font-size:11px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px}.footer-links a:hover{color:white}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:translateY(0)}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;gap:20px;padding-top:70px;text-align:center;min-height:auto}.hero-copy{margin:auto}.hero-actions,.social-row{justify-content:center}.hero-art{min-height:390px}.about-grid,.cloud-content,.services-layout{grid-template-columns:1fr}.focus-grid{grid-template-columns:repeat(2,1fr)}.repo-grid{grid-template-columns:repeat(2,1fr)}.cloud-list{max-width:650px}.section-head{align-items:flex-start;flex-direction:column}.section-head p{max-width:600px}}
+    @media(max-width:620px){.wrap{width:min(100% - 28px,var(--max))}.nav{height:66px}.nav-links{display:none;position:absolute;top:66px;left:0;right:0;padding:20px;background:#0b101d;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:13px 5px}.nav-cta{display:none}.menu-toggle{display:block}.hero{padding-top:62px;padding-bottom:60px}.hero h1{font-size:clamp(43px,12vw,62px)}.hero-copy{font-size:15px}.hero-art{min-height:340px}.orbit{width:300px}.profile-card{width:280px}.tag-one{right:-2px;top:8%}.tag-two{left:-2px;bottom:6%}section{padding:60px 0}.focus-grid,.repo-grid,.donation-grid{grid-template-columns:1fr}.cloud-list{grid-template-columns:1fr 1fr}.project-toolbar{align-items:stretch;flex-direction:column}.repo-search{width:100%}.contact-box{align-items:flex-start;flex-direction:column}.panel{padding:22px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Draxon","alternateName":"DraxonV1","url":"https://devdraxon.in","image":"https://github.com/DraxonV1.png","jobTitle":"Python Developer and Automation Engineer","description":"Builds Python automation tools, analyzes web applications, and develops developer-focused services.","sameAs":["https://github.com/DraxonV1","https://www.youtube.com/@DraxonV1","https://t.me/draxono"],"knowsAbout":["Python","Automation","Reverse Engineering","Web Application Analysis","API Integrations","Web Scraping"]}
+  </script>
 </head>
-<body class="antialiased">
-
-    <!-- 3D Background -->
-    <canvas id="canvas-bg"></canvas>
-
-    <!-- Sidebar / Nav -->
-    <nav class="fixed bottom-0 md:left-0 md:top-0 md:bottom-auto w-full md:w-20 md:h-screen glass z-50 flex md:flex-col justify-between items-center py-4 px-6 md:px-0 md:py-8 border-t md:border-t-0 md:border-r border-white/10">
-        <!-- Logo -->
-        <a href="#" class="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-neon-start to-neon-end text-black font-bold text-xl mb-8 shadow-[0_0_15px_rgba(0,245,160,0.5)]">
-            D
-        </a>
-
-        <!-- Links -->
-        <div class="flex md:flex-col gap-8 w-full md:w-auto justify-between md:justify-center">
-            <a href="#home" class="text-2xl text-gray-400 hover:text-neon-start transition-colors tooltip-wrapper relative group">
-                <i class='bx bx-home-alt-2'></i>
-                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Home</span>
-            </a>
-            <a href="#about" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
-                <i class='bx bx-user'></i>
-                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">About</span>
-            </a>
-            <a href="#projects" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
-                <i class='bx bx-code-alt'></i>
-                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Code</span>
-            </a>
-            <a href="#mods" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
-                <i class='bx bxs-cube-alt'></i>
-                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Mods</span>
-            </a>
-            <a href="#support" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
-                <i class='bx bx-heart'></i>
-                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Support</span>
-            </a>
-            <a href="#contact" class="text-2xl text-gray-400 hover:text-neon-start transition-colors relative group">
-                <i class='bx bx-message-square-dots'></i>
-                <span class="absolute left-14 bg-black px-2 py-1 rounded text-xs text-neon-start opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-neon-start/30">Hire</span>
-            </a>
-        </div>
-
-        <!-- Social -->
-        <div class="hidden md:flex flex-col gap-4 mt-auto">
-            <a href="https://github.com/DraxonV1" target="_blank" rel="noopener noreferrer" class="text-xl text-gray-400 hover:text-white"><i class='bx bxl-github'></i></a>
-        </div>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Draxon home"><span class="brand-mark">D</span><span>DraxonV1<small>Independent developer</small></span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a><a href="#focus">Focus</a><a href="#products">Products</a><a href="#projects">Projects</a><a href="#services">Services</a>
+      </div>
+      <a class="nav-cta" href="https://t.me/draxono" target="_blank" rel="noopener noreferrer">Contact me <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
     </nav>
+  </header>
 
-    <!-- Main Content -->
-    <main class="md:ml-20 min-h-screen relative z-10 p-6 md:p-12 lg:p-20 max-w-7xl mx-auto pb-24 md:pb-12">
-        
-        <!-- Hero Section -->
-        <section id="home" class="min-h-[85vh] flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div class="space-y-6 lg:w-3/5 order-2 lg:order-1">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-start/30 bg-neon-start/5">
-                    <span class="w-2 h-2 rounded-full bg-neon-start animate-pulse"></span>
-                    <span class="text-neon-start text-xs font-mono font-bold tracking-wider uppercase">Open to Work</span>
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                    I am <span class="text-gradient">Draxon</span>
-                </h1>
-                <p class="text-xl text-gray-400 max-w-lg leading-relaxed font-light">
-                    Python Developer &bull; Fast APIs &bull; Automation &bull; Minecraft Modding
-                </p>
-                <p class="text-gray-500 max-w-md text-sm">
-                    I build efficient backend systems and sometimes create immersive Minecraft modifications.
-                </p>
-
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="https://t.me/draxono" target="_blank" rel="noopener noreferrer" class="neon-border bg-gray-900 text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-gray-800 transition-all">
-                        <i class='bx bxl-telegram text-xl'></i> Hire Me
-                    </a>
-                    <a href="https://github.com/DraxonV1" target="_blank" rel="noopener noreferrer" class="glass text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-white/5 transition-all">
-                        <i class='bx bxl-github text-xl'></i> GitHub
-                    </a>
-                </div>
-
-                <div class="flex gap-4 mt-8">
-                    <a href="https://modrinth.com/user/DraxonV1" target="_blank" class="text-gray-500 hover:text-neon-end text-sm transition-colors flex items-center gap-1"><i class='bx bx-cube'></i> Modrinth</a>
-                    <a href="https://www.youtube.com/@DraxonV1" target="_blank" class="text-gray-500 hover:text-red-500 text-sm transition-colors flex items-center gap-1"><i class='bx bxl-youtube'></i> YouTube</a>
-                </div>
-            </div>
-
-            <div class="lg:w-2/5 order-1 lg:order-2 flex justify-center perspective-container">
-                <div id="hero-card" class="tilt-card glass p-2 rounded-2xl w-64 h-64 md:w-80 md:h-80 relative group cursor-none">
-                    <img src="https://github.com/DraxonV1.png" alt="Draxon PFP" class="w-full h-full rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-2xl shadow-neon-start/20">
-                    <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-neon-start to-neon-end rounded-full blur-2xl opacity-40 animate-blob"></div>
-                    <div class="absolute top-4 right-4 tilt-content bg-black/80 backdrop-blur px-3 py-1 rounded-full border border-white/10">
-                        <span class="text-xs font-mono text-neon-start">v1.0</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="py-20">
-            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <i class='bx bx-user text-neon-start'></i> About Draxon
-            </h2>
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon-start relative overflow-hidden mb-8">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-neon-end/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                <p class="text-gray-300 text-lg leading-relaxed relative z-10 mb-6">
-                    I'm <span class="text-white font-semibold">Draxon</span> (DraxonV1 online). I specialize in Python development with a focus on writing clean, efficient code for backend systems, automation tools, and APIs. When I'm not wrestling with Python scripts, I dive into the Java ecosystem to develop mods for Minecraft, bringing new mechanics and features to the game. I love open-source and contribute whenever I can.
-                </p>
-                <div class="mt-6 flex flex-wrap gap-2 relative z-10">
-                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-neon-start border border-neon-start/20">Python</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-neon-end border border-neon-end/20">Java (Fabric)</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-blue-400 border border-blue-400/20">HTML</span>
-                    <span class="px-3 py-1 bg-white/5 rounded-md text-xs font-mono text-purple-400 border border-purple-400/20">Git</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="glass p-6 rounded-2xl border-t-2 border-neon-start">
-                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                        <i class='bx bx-briefcase text-neon-start'></i> Experience
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-neon-start mt-2"></div>
-                            <div>
-                                <h4 class="font-semibold text-white">Python Backend Development</h4>
-                                <p class="text-gray-400 text-sm">Built REST APIs using FastAPI and Flask, implemented database systems with SQL, and created scalable backend architectures for various applications.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-neon-start mt-2"></div>
-                            <div>
-                                <h4 class="font-semibold text-white">Automation & Bots</h4>
-                                <p class="text-gray-400 text-sm">Developed Discord and Telegram bots for community management, automated data collection pipelines, and workflow automation scripts.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-neon-start mt-2"></div>
-                            <div>
-                                <h4 class="font-semibold text-white">Minecraft Modding</h4>
-                                <p class="text-gray-400 text-sm">Created and published multiple Minecraft mods on Modrinth and CurseForge, specializing in Fabric mod development with custom game mechanics.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="glass p-6 rounded-2xl border-t-2 border-neon-end">
-                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                        <i class='bx bx-rocket text-neon-end'></i> Featured Projects
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-neon-end mt-2"></div>
-                            <div>
-                                <h4 class="font-semibold text-white">Discord Bots & Automation Tools</h4>
-                                <p class="text-gray-400 text-sm">Created feature-rich Discord bots with moderation, leveling systems, custom commands, and integrations with external APIs.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-neon-end mt-2"></div>
-                            <div>
-                                <h4 class="font-semibold text-white">Web Scrapers & Data Extraction</h4>
-                                <p class="text-gray-400 text-sm">Built powerful web scrapers for data collection, monitoring price changes, and aggregating information from multiple sources.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-neon-end mt-2"></div>
-                            <div>
-                                <h4 class="font-semibold text-white">Minecraft Modifications</h4>
-                                <p class="text-gray-400 text-sm">Developed many Minecraft mods, adding new gameplay features, items, and systems to enhance the game.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects (GitHub) -->
-        <section id="projects" class="py-20">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-                <h2 class="text-3xl font-bold flex items-center gap-3">
-                    <i class='bx bx-code-alt text-neon-start'></i> GitHub Repos
-                </h2>
-                <div class="flex items-center gap-4">
-                    <div class="relative">
-                        <input type="text" id="repo-search" placeholder="Search repositories..." class="bg-black/40 border border-white/10 rounded-lg px-4 py-2 pl-10 text-sm text-gray-300 focus:outline-none focus:border-neon-start/50 w-64 md:w-80 transition-all">
-                        <i class='bx bx-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-500'></i>
-                    </div>
-                    <div id="github-status" class="text-xs text-gray-500 font-mono hidden md:block">Fetching...</div>
-                </div>
-            </div>
-
-            <!-- Featured Grid (Top 2) -->
-            <div id="featured-projects" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <!-- Injected via JS -->
-            </div>
-
-            <!-- All Projects Grid -->
-            <h3 class="text-xl font-semibold mb-4 text-gray-400">All Repositories</h3>
-            <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Injected via JS -->
-            </div>
-        </section>
-
-        <!-- Mods (Modrinth) -->
-        <section id="mods" class="py-20">
-            <div class="flex items-center justify-between mb-8">
-                <h2 class="text-3xl font-bold flex items-center gap-3">
-                    <i class='bx bxs-cube-alt text-neon-end'></i> Minecraft Mods
-                </h2>
-                <div class="flex gap-2">
-                    <a href="https://modrinth.com/user/DraxonV1" target="_blank" class="text-xs bg-[#1bd96a]/10 text-[#1bd96a] px-2 py-1 rounded border border-[#1bd96a]/30">Modrinth</a>
-                    <a href="https://curseforge.com/members/DraxonV1" target="_blank" class="text-xs bg-[#f16436]/10 text-[#f16436] px-2 py-1 rounded border border-[#f16436]/30">CurseForge</a>
-                </div>
-            </div>
-            
-            <div id="modrinth-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Injected via JS -->
-                <div class="col-span-full text-center py-12 hidden" id="mod-loader">
-                    <div class="loader mx-auto mb-4"></div>
-                    <p class="text-gray-500">Loading Mods...</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact / Hire -->
-        <section id="contact" class="py-20 mb-20">
-            <div class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-start to-neon-end"></div>
-                
-                <h2 class="text-4xl font-bold mb-4">Ready to Collaborate?</h2>
-                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    I am currently accepting commissions for Python automation, custom APIs, and Minecraft mod development.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left mb-12">
-                    <div class="bg-black/40 p-6 rounded-xl border border-white/5">
-                        <h3 class="text-neon-start font-bold mb-3">What I can build</h3>
-                        <ul class="space-y-2 text-sm text-gray-300">
-                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> Discord/Telegram Bots</li>
-                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> Web Scrapers & Automation scripts</li>
-                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> REST APIs (FastAPI/Flask)</li>
-                            <li class="flex items-center gap-2"><i class='bx bx-check text-neon-start'></i> Minecraft Fabric/Forge Mods</li>
-                        </ul>
-                    </div>
-                    <div class="bg-black/40 p-6 rounded-xl border border-white/5 flex flex-col justify-center">
-                        <div class="space-y-4">
-                            <a href="https://t.me/draxono" target="_blank" class="block w-full bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold py-3 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
-                                <i class='bx bxl-telegram text-xl'></i> DM on Telegram (Recommended)
-                            </a>
-                            <div class="relative group">
-                                <div class="block w-full bg-[#5865F2]/20 text-[#5865F2] font-bold py-3 px-4 rounded-lg text-center border border-[#5865F2]/30 cursor-help flex items-center justify-center gap-2">
-                                    <i class='bx bxl-discord-alt text-xl'></i> @draxon.v11
-                                </div>
-                                <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-red-500/90 text-white text-xs py-1 px-3 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                    Unstable / Slow Replies
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="support" class="py-20 mb-20">
-            <div class="glass rounded-3xl p-8 md:p-12 text-center relative overflow-hidden border border-neon-start/20">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-start to-neon-end"></div>
-                
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-neon-start/10 mb-6">
-                    <i class='bx bx-heart text-3xl text-neon-start'></i>
-                </div>
-                
-                <h2 class="text-3xl font-bold mb-4">Support My Work</h2>
-                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    If you appreciate my open-source projects, mods, or tools, consider supporting me. Your support helps me continue creating and maintaining these projects for the community.
-                </p>
-
-                <button id="donate-btn" class="neon-border bg-gradient-to-r from-neon-start/20 to-neon-end/20 text-white px-8 py-4 rounded-lg font-bold flex items-center gap-3 mx-auto hover:from-neon-start/30 hover:to-neon-end/30 transition-all">
-                    <i class='bx bx-donate-heart text-2xl'></i> Donate / Support
-                </button>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="text-center text-gray-600 text-sm py-8 border-t border-white/5">
-            <p>&copy; <span id="year"></span> Draxon (DraxonV1). All rights reserved.</p>
-            <div class="flex justify-center gap-4 mt-2">
-                <a href="https://github.com/DraxonV1" class="hover:text-neon-start">GitHub</a>
-                <span class="text-gray-800">•</span>
-                <a href="https://t.me/draxono" class="hover:text-neon-start">Telegram</a>
-            </div>
-        </footer>
-
-    </main>
-
-    <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-        <div class="glass rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10 shadow-2xl">
-            <div class="p-6 border-b border-white/10 flex justify-between items-start">
-                <div>
-                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
-                    <p id="modal-language" class="text-sm text-gray-500 mt-1"></p>
-                </div>
-                <button id="modal-close" class="text-gray-400 hover:text-white transition-colors">
-                    <i class='bx bx-x text-2xl'></i>
-                </button>
-            </div>
-            <div class="p-6">
-                <p id="modal-description" class="text-gray-300 mb-6"></p>
-                <div class="grid grid-cols-3 gap-4 mb-6">
-                    <div class="bg-black/40 p-3 rounded-lg text-center">
-                        <div id="modal-stars" class="text-xl font-bold text-neon-start"></div>
-                        <div class="text-xs text-gray-500">Stars</div>
-                    </div>
-                    <div class="bg-black/40 p-3 rounded-lg text-center">
-                        <div id="modal-forks" class="text-xl font-bold text-neon-end"></div>
-                        <div class="text-xs text-gray-500">Forks</div>
-                    </div>
-                    <div class="bg-black/40 p-3 rounded-lg text-center">
-                        <div id="modal-issues" class="text-xl font-bold text-purple-400"></div>
-                        <div class="text-xs text-gray-500">Issues</div>
-                    </div>
-                </div>
-                <div class="flex gap-3">
-                    <a id="modal-github" href="#" target="_blank" class="flex-1 bg-gray-800 hover:bg-gray-700 text-white py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-colors">
-                        <i class='bx bxl-github text-xl'></i> View on GitHub
-                    </a>
-                    <button id="modal-close-btn" class="px-6 py-3 rounded-lg border border-white/20 text-gray-300 hover:bg-white/5 transition-colors">
-                        Close
-                    </button>
-                </div>
-            </div>
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <span class="eyebrow">Python · Reverse Engineering · Automation</span>
+        <h1>Understanding systems.<br><span class="gradient">Building what works.</span></h1>
+        <p class="hero-copy">I'm Draxon, an independent developer focused on Python automation, reverse engineering, and practical tools for web-based systems. I like figuring out how things work behind the scenes, then turning that knowledge into useful software.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://draxon.one" target="_blank" rel="noopener noreferrer">Explore DraxonCloud <span aria-hidden="true">↗</span></a>
+          <a class="button secondary" href="#projects">View projects <span aria-hidden="true">↓</span></a>
         </div>
-    </div>
-
-    <div id="donate-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-        <div class="glass rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-neon-start/30 shadow-2xl">
-            <div class="p-6 border-b border-white/10 flex justify-between items-center">
-                <h3 class="text-2xl font-bold text-white flex items-center gap-2">
-                    <i class='bx bx-heart text-neon-start'></i> Support Draxon
-                </h3>
-                <button id="donate-close" class="text-gray-400 hover:text-white transition-colors">
-                    <i class='bx bx-x text-2xl'></i>
-                </button>
-            </div>
-            <div class="p-6">
-                <p class="text-gray-300 mb-6">Choose your preferred cryptocurrency to donate. Your support helps me continue creating open-source projects and Minecraft mods!</p>
-                
-                <div id="crypto-list" class="space-y-3 mb-6">
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="btc">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#F7931A]/20 flex items-center justify-center">
-                                <i class='bx bx-bitcoin text-[#F7931A] text-xl'></i>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">Bitcoin</h4>
-                                <p class="text-xs text-gray-500 font-mono">bc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p7hpq5n</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="ltc">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#BFBBBB]/20 flex items-center justify-center">
-                                <span class="text-[#BFBBBB] font-bold">L</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">Litecoin</h4>
-                                <p class="text-xs text-gray-500 font-mono">ltc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p6tmyvr</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="eth">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#627EEA]/20 flex items-center justify-center">
-                                <span class="text-[#627EEA] font-bold">Ξ</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">Ethereum (ERC20)</h4>
-                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="sol">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#14F195]/20 flex items-center justify-center">
-                                <span class="text-[#14F195] font-bold">SOL</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">Solana</h4>
-                                <p class="text-xs text-gray-500 font-mono">Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-polygon">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#8247E5]/20 flex items-center justify-center">
-                                <span class="text-[#8247E5] font-bold text-sm">₮</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">USDT (Polygon)</h4>
-                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-bep20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#F3BA2F]/20 flex items-center justify-center">
-                                <span class="text-[#F3BA2F] font-bold text-sm">₮</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">USDT (BEP20)</h4>
-                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-erc20">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#26A17B]/20 flex items-center justify-center">
-                                <span class="text-[#26A17B] font-bold text-sm">₮</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">USDT (ERC20)</h4>
-                                <p class="text-xs text-gray-500 font-mono">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                    
-                    <div class="crypto-option bg-black/40 p-4 rounded-lg border border-white/10 cursor-pointer hover:border-neon-start/50 transition-colors" data-crypto="usdt-solana">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-[#14F195]/20 flex items-center justify-center">
-                                <span class="text-[#14F195] font-bold text-sm">₮</span>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="font-semibold text-white">USDT (Solana)</h4>
-                                <p class="text-xs text-gray-500 font-mono">Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL</p>
-                            </div>
-                            <button class="copy-btn bg-neon-start/20 text-neon-start px-3 py-1 rounded text-sm hover:bg-neon-start/30 transition-colors">Copy</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="donation-form" class="hidden bg-black/40 p-6 rounded-xl border border-neon-start/30">
-                    <h4 class="font-bold text-white mb-4 flex items-center gap-2">
-                        <i class='bx bx-check-circle text-neon-start'></i> Thank You!
-                    </h4>
-                    <p class="text-gray-400 mb-4">Your support means a lot! Please let me know your name so I can thank you personally.</p>
-                    <input type="text" id="donor-name" placeholder="Your name or username" class="w-full bg-black/60 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-start/50 mb-4">
-                    <button id="submit-donation" class="w-full bg-gradient-to-r from-neon-start to-neon-end text-black font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">
-                        Submit & Close
-                    </button>
-                </div>
-
-                <div class="flex gap-3 mt-6">
-                    <button id="donate-paid-btn" class="flex-1 bg-neon-start/20 hover:bg-neon-start/30 text-neon-start py-3 px-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-colors border border-neon-start/30">
-                        <i class='bx bx-check text-xl'></i> I've Paid
-                    </button>
-                    <button id="donate-close-btn" class="px-6 py-3 rounded-lg border border-white/20 text-gray-300 hover:bg-white/5 transition-colors">
-                        Close
-                    </button>
-                </div>
-            </div>
+        <div class="social-row"><a href="https://github.com/DraxonV1" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="https://t.me/draxono" target="_blank" rel="noopener noreferrer">TELEGRAM ↗</a><a href="https://www.youtube.com/@DraxonV1" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a></div>
+      </div>
+      <div class="hero-art" aria-label="Developer profile card">
+        <div class="orbit"><span class="orbit-dot"></span></div>
+        <div class="float-tag tag-one">python / automation</div>
+        <div class="float-tag tag-two">reverse engineering</div>
+        <div class="profile-card">
+          <div class="profile-top"><img class="avatar" src="https://github.com/DraxonV1.png" alt="DraxonV1 profile picture"><div><div class="profile-name">DraxonV1</div><div class="profile-handle">@draxon</div><div class="status">Building and experimenting</div></div></div>
+          <div class="terminal"><div><span class="prompt">›</span> focus = <span class="value">"automation"</span></div><div><span class="prompt">›</span> language = <span class="value">"python"</span></div><div><span class="prompt">›</span> curiosity = <span class="value">True</span></div><div class="comment"># learn how it works. make it useful.</div></div>
+          <div class="mini-stats"><div class="mini-stat"><strong>Python</strong><span>Primary</span></div><div class="mini-stat"><strong>Web</strong><span>Analysis</span></div><div class="mini-stat"><strong>Tools</strong><span>Building</span></div></div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Logic Script -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <section id="about" class="wrap reveal">
+      <div class="section-head"><div><span class="eyebrow">A little about me</span><h2>Curiosity is the starting point.</h2></div><p>I build things by exploring the problem, understanding the system, and finding a practical way to make it work.</p></div>
+      <div class="about-grid">
+        <article class="panel"><h3>What I care about</h3><p>Automation that saves time, software that behaves predictably, and understanding the details that are easy to miss. My work often involves web application behavior, APIs, verification flows, and custom developer tools.</p><div class="chips"><span class="chip">Python</span><span class="chip">Git</span><span class="chip">Windows</span><span class="chip">Web systems</span><span class="chip">AI-assisted development</span></div></article>
+        <article class="panel"><h3>How I approach problems</h3><p>Start by observing the real behavior, break the problem into smaller pieces, test assumptions, and build a focused solution. I value useful results over unnecessary complexity.</p><div class="chips"><span class="chip">Analyze</span><span class="chip">Experiment</span><span class="chip">Automate</span><span class="chip">Iterate</span></div></article>
+      </div>
+    </section>
 
-        const CACHE_DURATION = 1000 * 60 * 60;
-        let allRepos = [];
+    <section id="focus" class="wrap reveal">
+      <div class="section-head"><div><span class="eyebrow">Areas of focus</span><h2>What I work on.</h2></div><p>A practical mix of scripting, investigation, and infrastructure for real-world automation.</p></div>
+      <div class="focus-grid">
+        <article class="focus-card"><div class="icon-box">⌘</div><h3>Python Automation</h3><p>Custom scripts, workflow automation, service integrations, and tools for repetitive or complex tasks.</p></article>
+        <article class="focus-card"><div class="icon-box">⌕</div><h3>Reverse Engineering</h3><p>Investigating website behavior, request flows, application logic, and client-server communication.</p></article>
+        <article class="focus-card"><div class="icon-box">↗</div><h3>Web Systems</h3><p>Working with HTTP, sessions, APIs, web scraping, and the moving parts behind web applications.</p></article>
+        <article class="focus-card"><div class="icon-box">◈</div><h3>Verification Research</h3><p>Studying anti-bot and verification mechanisms, testing authorized automation, and understanding how protections behave.</p></article>
+        <article class="focus-card"><div class="icon-box">⇄</div><h3>Proxy Workflows</h3><p>Proxy integrations, request routing, and network-aware automation workflows.</p></article>
+        <article class="focus-card"><div class="icon-box">⌁</div><h3>API Integrations</h3><p>Connecting services through clean interfaces and building practical clients around supported endpoints.</p></article>
+      </div>
+    </section>
 
-        async function fetchWithCache(key, url, headers = {}) {
-            const cached = localStorage.getItem(key);
-            if (cached) {
-                const { timestamp, data } = JSON.parse(cached);
-                if (Date.now() - timestamp < CACHE_DURATION) return data;
-            }
-            try {
-                const res = await fetch(url, { headers });
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                localStorage.setItem(key, JSON.stringify({ timestamp: Date.now(), data }));
-                return data;
-            } catch (e) {
-                console.warn(`Fetch failed for ${key}:`, e);
-                return null;
-            }
+    <section id="products" class="wrap reveal">
+      <div class="cloud-panel">
+        <div class="cloud-content">
+          <div><span class="cloud-label">My platform · draxon.one</span><h2>Meet <span class="gradient">DraxonCloud.</span></h2><p>A unified platform for automation services, built to give developers a consistent way to access supported tools through one account, dashboard, and API.</p><div class="cloud-actions"><a class="button" href="https://draxon.one" target="_blank" rel="noopener noreferrer">Visit DraxonCloud ↗</a><a class="button secondary" href="https://draxon.one/docs" target="_blank" rel="noopener noreferrer">API documentation ↗</a></div></div>
+          <div class="cloud-list"><div class="cloud-item"><span>↗</span> Captcha-solving API</div><div class="cloud-item"><span>✉</span> Temporary mail</div><div class="cloud-item"><span>⌘</span> Developer endpoints</div><div class="cloud-item"><span>◉</span> Unified dashboard</div><div class="cloud-item"><span>＋</span> More services planned</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="wrap reveal">
+      <div class="section-head"><div><span class="eyebrow">From my GitHub</span><h2>Selected projects.</h2></div><p>Explore public repositories and the tools I'm building. The list updates from GitHub automatically.</p></div>
+      <div class="project-toolbar"><div class="repo-status" id="repo-status" aria-live="polite">Loading public repositories…</div><input class="repo-search" id="repo-search" type="search" placeholder="Search repositories…" aria-label="Search repositories"></div>
+      <div class="repo-grid" id="repo-grid"><div class="empty-state">Fetching projects from GitHub…</div></div>
+      <div style="margin-top:22px"><a class="button secondary" href="https://github.com/DraxonV1?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories ↗</a></div>
+    </section>
+
+    <section id="services" class="wrap reveal">
+      <div class="section-head"><div><span class="eyebrow">Commissions</span><h2>Need something built?</h2></div><p>I take on selected projects where custom tooling, investigation, or automation can make a real difference.</p></div>
+      <div class="services-layout">
+        <article class="panel"><h3>Custom solutions, not one-size-fits-all.</h3><p>Tell me what you're trying to automate or understand. I can help scope the problem and build a focused solution around your workflow.</p><div class="chips"><span class="chip">Python-first</span><span class="chip">Custom tooling</span><span class="chip">Practical delivery</span></div><div style="margin-top:24px"><a class="button" href="https://t.me/draxono" target="_blank" rel="noopener noreferrer">Discuss a project ↗</a></div></article>
+        <div class="service-list">
+          <article class="service-row"><div class="icon-box">⌘</div><div><h3>Python automation</h3><p>Custom scripts, workflow tools, and integrations.</p></div></article>
+          <article class="service-row"><div class="icon-box">⌕</div><div><h3>Website analysis & reverse engineering</h3><p>Behavior analysis, request-flow investigation, and technical research.</p></div></article>
+          <article class="service-row"><div class="icon-box">⇄</div><div><h3>Scraping & API clients</h3><p>Data extraction, API integrations, and custom clients.</p></div></article>
+          <article class="service-row"><div class="icon-box">◈</div><div><h3>Automation infrastructure</h3><p>Proxy integrations, bots, and supporting tools.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap reveal">
+      <div class="contact-box"><div><span class="eyebrow">Get in touch</span><h2>Have a technical problem?</h2><p>For commissions, collaboration, or questions about my projects, Telegram is the best way to reach me.</p></div><a class="button" href="https://t.me/draxono" target="_blank" rel="noopener noreferrer">Message @draxono ↗</a></div>
+    </section>
+
+    <section id="support" class="wrap reveal">
+      <div class="section-head"><div><span class="eyebrow">Support independent work</span><h2>Support my projects.</h2></div><p>If my tools or projects have been useful to you, you can support continued development using one of the addresses below.</p></div>
+      <div class="donation-grid" id="wallet-list">
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">Bitcoin (BTC)</div><div class="wallet-network">Bitcoin network</div></div><button class="copy-btn" data-copy="bc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p7hpq5n">Copy</button></div><div class="wallet-address">bc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p7hpq5n</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">Litecoin (LTC)</div><div class="wallet-network">Litecoin network</div></div><button class="copy-btn" data-copy="ltc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p6tmyvr">Copy</button></div><div class="wallet-address">ltc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p6tmyvr</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">Ethereum (ETH)</div><div class="wallet-network">Ethereum network</div></div><button class="copy-btn" data-copy="0x02b2F37974c7Ba988f4Cc150AF3711121B88f558">Copy</button></div><div class="wallet-address">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">Solana (SOL)</div><div class="wallet-network">Solana network</div></div><button class="copy-btn" data-copy="Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL">Copy</button></div><div class="wallet-address">Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">USDT · Polygon</div><div class="wallet-network">Polygon network</div></div><button class="copy-btn" data-copy="0x02b2F37974c7Ba988f4Cc150AF3711121B88f558">Copy</button></div><div class="wallet-address">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">USDT · BNB Smart Chain</div><div class="wallet-network">BEP20 network</div></div><button class="copy-btn" data-copy="0x02b2F37974c7Ba988f4Cc150AF3711121B88f558">Copy</button></div><div class="wallet-address">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">USDT · Ethereum</div><div class="wallet-network">ERC20 network</div></div><button class="copy-btn" data-copy="0x02b2F37974c7Ba988f4Cc150AF3711121B88f558">Copy</button></div><div class="wallet-address">0x02b2F37974c7Ba988f4Cc150AF3711121B88f558</div></div>
+        <div class="wallet"><div class="wallet-top"><div><div class="wallet-name">USDT · Solana</div><div class="wallet-network">Solana network</div></div><button class="copy-btn" data-copy="Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL">Copy</button></div><div class="wallet-address">Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL</div></div>
+      </div>
+      <p class="notice">Always verify the selected network before sending funds. Transfers sent over the wrong network may be unrecoverable.</p>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><div>© <span id="year"></span> DraxonV1. Built with curiosity.</div><div class="footer-links"><a href="https://github.com/DraxonV1" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://draxon.one" target="_blank" rel="noopener noreferrer">DraxonCloud</a><a href="https://devdraxon.in" target="_blank" rel="noopener noreferrer">Website</a><a href="https://t.me/draxono" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.youtube.com/@DraxonV1" target="_blank" rel="noopener noreferrer">YouTube</a></div></div></footer>
+
+  <script>
+    const $ = (selector) => document.querySelector(selector);
+    $('#year').textContent = new Date().getFullYear();
+
+    const menuButton = $('#menu-toggle');
+    const navLinks = $('#nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.textContent = isOpen ? 'Close' : 'Menu';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'Menu';
+    }));
+
+    document.querySelectorAll('[data-copy]').forEach(button => {
+      button.addEventListener('click', async () => {
+        const original = button.textContent;
+        try {
+          await navigator.clipboard.writeText(button.dataset.copy);
+          button.textContent = 'Copied';
+        } catch {
+          const input = document.createElement('textarea');
+          input.value = button.dataset.copy;
+          input.style.position = 'fixed';
+          input.style.opacity = '0';
+          document.body.appendChild(input);
+          input.select();
+          const ok = document.execCommand('copy');
+          input.remove();
+          button.textContent = ok ? 'Copied' : 'Select address';
         }
-        async function loadGitHub() {
-            const container = document.getElementById('all-projects');
-            const featured = document.getElementById('featured-projects');
-            const status = document.getElementById('github-status');
-            const searchInput = document.getElementById('repo-search');
+        window.setTimeout(() => button.textContent = original, 1600);
+      });
+    });
 
-            const repos = await fetchWithCache(
-                'gh_repos', 
-                'https://api.github.com/users/DraxonV1/repos?sort=updated&per_page=100'
-            );
-
-            if (!repos) {
-                status.innerText = "Failed to load GitHub.";
-                return;
-            }
-
-            allRepos = repos;
-            status.innerText = `${repos.length} public repositories found`;
-            
-            const nonForks = repos.filter(r => !r.fork);
-            const sortedByStars = [...nonForks].sort((a, b) => b.stargazers_count - a.stargazers_count);
-            
-            const createCard = (repo, isFeatured = false) => {
-                const langColor = {
-                    'Python': '#3572A5',
-                    'Java': '#b07219',
-                    'HTML': '#e34c26',
-                    'JavaScript': '#f1e05a',
-                    'CSS': '#563d7c'
-                }[repo.language] || '#888';
-
-                return `
-                <div class="glass p-6 rounded-xl group hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full border-t-2 ${isFeatured ? 'border-neon-start' : 'border-transparent hover:border-neon-start'} cursor-pointer" data-repo-name="${repo.name.toLowerCase()}">
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="font-bold text-lg group-hover:text-neon-start transition-colors">${repo.name}</h3>
-                        <i class='bx bx-info-circle text-gray-500 group-hover:text-white'></i>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4 flex-grow line-clamp-3">${repo.description || 'No description available.'}</p>
-                    <div class="flex items-center justify-between text-xs text-gray-500 mt-auto pt-4 border-t border-white/5">
-                        <div class="flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full" style="background-color: ${langColor}"></span>
-                            ${repo.language || 'Code'}
-                        </div>
-                        <div class="flex gap-3">
-                            <span class="flex items-center gap-1"><i class='bx bx-star'></i> ${repo.stargazers_count}</span>
-                            <span class="flex items-center gap-1"><i class='bx bx-git-repo-forked'></i> ${repo.forks_count}</span>
-                        </div>
-                    </div>
-                </div>
-                `;
-            };
-
-            featured.innerHTML = sortedByStars.slice(0, 2).map(r => createCard(r, true)).join('');
-            
-            const renderProjects = (projects) => {
-                container.innerHTML = projects.slice(0, 12).map(r => createCard(r)).join('');
-                addCardListeners(projects.slice(0, 12));
-            };
-
-            renderProjects(nonForks.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at)));
-
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase();
-                const filtered = allRepos.filter(r => 
-                    r.name.toLowerCase().includes(query) || 
-                    (r.description && r.description.toLowerCase().includes(query))
-                );
-                const nonForksFiltered = filtered.filter(r => !r.fork);
-                renderProjects(nonForksFiltered);
-            });
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        function addCardListeners(projects) {
-            document.querySelectorAll('[data-repo-name]').forEach(card => {
-                card.addEventListener('click', () => {
-                    const repoName = card.dataset.repoName;
-                    const repo = projects.find(r => r.name.toLowerCase() === repoName);
-                    if (repo) openModal(repo);
-                });
-            });
-        }
+    const repoGrid = $('#repo-grid');
+    const repoStatus = $('#repo-status');
+    const repoSearch = $('#repo-search');
+    let repositories = [];
 
-        function openModal(repo) {
-            const modal = document.getElementById('project-modal');
-            const langColor = {
-                'Python': '#3572A5',
-                'Java': '#b07219',
-                'HTML': '#e34c26',
-                'JavaScript': '#f1e05a',
-                'CSS': '#563d7c'
-            }[repo.language] || '#888';
+    function escapeHtml(value = '') {
+      return String(value).replace(/[&<>"']/g, char => ({
+        '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+      }[char]));
+    }
 
-            document.getElementById('modal-title').textContent = repo.name;
-            document.getElementById('modal-language').innerHTML = `<span class="w-2 h-2 rounded-full inline-block mr-2" style="background-color: ${langColor}"></span>${repo.language || 'Code'}`;
-            document.getElementById('modal-description').textContent = repo.description || 'No description available.';
-            document.getElementById('modal-stars').textContent = repo.stargazers_count;
-            document.getElementById('modal-forks').textContent = repo.forks_count;
-            document.getElementById('modal-issues').textContent = repo.open_issues_count;
-            document.getElementById('modal-github').href = repo.html_url;
+    function renderRepos() {
+      const query = repoSearch.value.trim().toLowerCase();
+      const filtered = repositories.filter(repo =>
+        `${repo.name} ${repo.description || ''} ${repo.language || ''}`.toLowerCase().includes(query)
+      ).slice(0, 9);
 
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
+      if (!filtered.length) {
+        repoGrid.innerHTML = `<div class="empty-state">${repositories.length ? 'No repositories match that search.' : 'No public repositories are available right now.'}</div>`;
+        return;
+      }
 
-        function closeModal() {
-            const modal = document.getElementById('project-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
+      repoGrid.innerHTML = filtered.map(repo => `
+        <a class="repo-card" href="${escapeHtml(repo.html_url)}" target="_blank" rel="noopener noreferrer">
+          <div class="repo-title">${escapeHtml(repo.name)}</div>
+          <p class="repo-desc">${escapeHtml(repo.description || 'A public repository by DraxonV1.')}</p>
+          <div class="repo-meta">
+            <span class="repo-language">${escapeHtml(repo.language || 'Repository')}</span>
+            <span>★ ${Number(repo.stargazers_count) || 0} &nbsp;⑂ ${Number(repo.forks_count) || 0}</span>
+          </div>
+        </a>`).join('');
+    }
 
-        document.getElementById('modal-close').addEventListener('click', closeModal);
-        document.getElementById('modal-close-btn').addEventListener('click', closeModal);
-        document.getElementById('project-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'project-modal') closeModal();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        const donateModal = document.getElementById('donate-modal');
-        const donationForm = document.getElementById('donation-form');
-
-        document.getElementById('donate-btn').addEventListener('click', () => {
-            donateModal.classList.remove('hidden');
-            donateModal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        });
-
-        function closeDonateModal() {
-            donateModal.classList.add('hidden');
-            donateModal.classList.remove('flex');
-            document.body.style.overflow = '';
-            donationForm.classList.add('hidden');
-            document.getElementById('donor-name').value = '';
-        }
-
-        document.getElementById('donate-close').addEventListener('click', closeDonateModal);
-        document.getElementById('donate-close-btn').addEventListener('click', closeDonateModal);
-        donateModal.addEventListener('click', (e) => {
-            if (e.target.id === 'donate-modal') closeDonateModal();
-        });
-
-        document.querySelectorAll('.copy-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const address = btn.parentElement.querySelector('.font-mono').textContent;
-                navigator.clipboard.writeText(address).then(() => {
-                    const originalText = btn.textContent;
-                    btn.textContent = 'Copied!';
-                    btn.classList.add('bg-neon-start/40');
-                    setTimeout(() => {
-                        btn.textContent = originalText;
-                        btn.classList.remove('bg-neon-start/40');
-                    }, 2000);
-                });
-            });
-        });
-
-        document.getElementById('donate-paid-btn').addEventListener('click', () => {
-            donationForm.classList.remove('hidden');
-        });
-
-        document.getElementById('submit-donation').addEventListener('click', () => {
-            const name = document.getElementById('donor-name').value.trim();
-            if (name) {
-                alert(`Thank you so much, ${name}! Your support is greatly appreciated! 💚`);
-            } else {
-                alert('Thank you so much for your support! It means a lot! 💚');
-            }
-            closeDonateModal();
-        });
-
-        async function loadModrinth() {
-            const container = document.getElementById('modrinth-projects');
-            const loader = document.getElementById('mod-loader');
-            loader.classList.remove('hidden');
-
-            const res = await fetchWithCache(
-                'mr_projects',
-                'https://api.modrinth.com/v2/search?facets=[["author:DraxonV1"]]&limit=6',
-                { 'User-Agent': 'DraxonV1-Portfolio/1.0 (devdraxon.in)' }
-            );
-
-            loader.classList.add('hidden');
-
-            if (!res || !res.hits || res.hits.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center text-gray-500">No mods found on Modrinth yet or API limited. <a href="https://modrinth.com/user/DraxonV1" class="text-neon-start underline">View Profile</a></div>`;
-                return;
-            }
-
-            container.innerHTML = res.hits.map(mod => `
-                <a href="https://modrinth.com/project/${mod.slug}" target="_blank" class="glass p-0 rounded-xl overflow-hidden group hover:shadow-[0_0_20px_rgba(0,245,160,0.1)] transition-all">
-                    <div class="h-32 bg-gray-800 relative overflow-hidden">
-                        ${mod.icon_url 
-                            ? `<img src="${mod.icon_url}" alt="${mod.title}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 blur-sm group-hover:blur-0">`
-                            : `<div class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center"><i class='bx bxs-cube text-4xl text-gray-700'></i></div>`
-                        }
-                        <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent">
-                            <h3 class="font-bold text-lg text-white group-hover:text-neon-end transition-colors">${mod.title}</h3>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <p class="text-gray-400 text-sm line-clamp-2 mb-4 h-10">${mod.description}</p>
-                        <div class="flex items-center justify-between text-xs font-mono text-gray-500">
-                            <span class="flex items-center gap-1"><i class='bx bx-download'></i> ${mod.downloads.toLocaleString()}</span>
-                            <span class="flex items-center gap-1"><i class='bx bx-heart'></i> ${mod.follows.toLocaleString()}</span>
-                        </div>
-                        <div class="mt-3 flex gap-2 overflow-hidden">
-                            ${mod.categories.slice(0, 3).map(cat => 
-                                `<span class="px-2 py-0.5 bg-white/5 rounded text-[10px] uppercase tracking-wider text-gray-400">${cat}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-                </a>
-            `).join('');
-        }
-
-        function init3D() {
-            const canvas = document.getElementById('canvas-bg');
-            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-            const scene = new THREE.Scene();
-            scene.fog = new THREE.FogExp2(0x050505, 0.002);
-
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 50;
-
-            const particlesGeometry = new THREE.BufferGeometry();
-            const particlesCount = window.innerWidth < 768 ? 700 : 1500;
-            const posArray = new Float32Array(particlesCount * 3);
-            const colorsArray = new Float32Array(particlesCount * 3);
-
-            const color1 = new THREE.Color(0x00f5a0);
-            const color2 = new THREE.Color(0x00d9f5);
-
-            for(let i = 0; i < particlesCount * 3; i+=3) {
-                posArray[i] = (Math.random() - 0.5) * 100;
-                posArray[i+1] = (Math.random() - 0.5) * 100;
-                posArray[i+2] = (Math.random() - 0.5) * 100;
-
-                const color = Math.random() > 0.5 ? color1 : color2;
-                colorsArray[i] = color.r;
-                colorsArray[i+1] = color.g;
-                colorsArray[i+2] = color.b;
-            }
-
-            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-            particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
-
-            const material = new THREE.PointsMaterial({
-                size: 0.15,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8,
-            });
-
-            const particlesMesh = new THREE.Points(particlesGeometry, material);
-            scene.add(particlesMesh);
-
-            let mouseX = 0;
-            let mouseY = 0;
-            let targetX = 0;
-            let targetY = 0;
-
-            const windowHalfX = window.innerWidth / 2;
-            const windowHalfY = window.innerHeight / 2;
-
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX - windowHalfX);
-                mouseY = (event.clientY - windowHalfY);
-                
-                const heroCard = document.getElementById('hero-card');
-                if (heroCard) {
-                    const rect = heroCard.getBoundingClientRect();
-                    const cardX = rect.left + rect.width / 2;
-                    const cardY = rect.top + rect.height / 2;
-                    const angleX = (event.clientY - cardY) / 25;
-                    const angleY = (event.clientX - cardX) / -25;
-                    heroCard.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-                }
-            });
-
-            const clock = new THREE.Clock();
-
-            function animate() {
-                requestAnimationFrame(animate);
-
-                targetX = mouseX * 0.001;
-                targetY = mouseY * 0.001;
-
-                particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
-                particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
-                
-                particlesMesh.rotation.z += 0.001;
-
-                renderer.render(scene, camera);
-            }
-
-            animate();
-
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            init3D();
-            loadGitHub();
-            loadModrinth();
-        });
-
-    </script>
+    repoSearch.addEventListener('input', renderRepos);
+    fetch('https://api.github.com/users/DraxonV1/repos?sort=updated&per_page=100', {
+      headers: { 'Accept': 'application/vnd.github+json' }
+    }).then(response => {
+      if (!response.ok) throw new Error('GitHub API request failed');
+      return response.json();
+    }).then(data => {
+      repositories = data.filter(repo => !repo.fork && !repo.archived)
+        .sort((a, b) => new Date(b.pushed_at || b.updated_at) - new Date(a.pushed_at || a.updated_at));
+      repoStatus.textContent = `${repositories.length} public repositories · sorted by recent activity`;
+      renderRepos();
+    }).catch(() => {
+      repoStatus.textContent = 'Could not load repositories automatically.';
+      repoGrid.innerHTML = `<div class="empty-state">GitHub's API could not be reached. <a href="https://github.com/DraxonV1?tab=repositories" style="color:#aabaff;text-decoration:underline">Browse repositories directly ↗</a></div>`;
+    });
+  </script>
 </body>
 </html>
