@@ -1,94 +1,103 @@
 # DraxonV1
 
-Python Developer, Minecraft Modder & Automation Expert
+**Python Developer · Reverse Engineer · Automation Engineer**
 
-![Python](https://img.shields.io/badge/Python-3572A5?style=for-the-badge&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-b07219?style=for-the-badge&logo=java&logoColor=white)
-![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)
-![Open Source](https://img.shields.io/badge/Open%20Source-🟢?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3572A5?style=for-the-badge\&logo=python\&logoColor=white)
+![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-18181B?style=for-the-badge\&logo=gnometerminal\&logoColor=white)
+![Automation](https://img.shields.io/badge/Automation-2563EB?style=for-the-badge\&logo=githubactions\&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D4?style=for-the-badge\&logo=windows\&logoColor=white)
 
-## 🚀 Who is Draxon?
+## About Me
 
-Draxon (known as DraxonV1 online) is an experienced Python developer specializing in automation, APIs, and Minecraft modding. With expertise in backend development, web scraping, and custom tool creation, Draxon builds efficient systems and immersive gaming experiences.
+I'm Draxon, known online as DraxonV1. I build automation tools, analyze web applications, reverse engineer software, and develop systems that solve practical problems.
 
-## 📋 About Me
+My main focus is Python, with interests in web automation, API analysis, proxy infrastructure, application behavior, and AI-powered development.
 
-I specialize in Python development with a focus on writing clean, efficient code for backend systems, automation tools, and APIs. When I'm not working with Python scripts, I dive into the Java ecosystem to develop mods for Minecraft, bringing new mechanics and features to the game. I love open-source and contribute whenever I can.
+I enjoy figuring out how things work behind the scenes and turning that understanding into useful tools.
 
-## 💼 Skills
+## Focus Areas
 
-- **Python** - Backend development, automation, APIs
-- **Java (Fabric/Forge)** - Minecraft modding
-- **SQL** - Database management
-- **Git** - Version control
+* **Python Development** — Custom tools, scripts, and automation systems.
+* **Reverse Engineering** — Analyzing websites, application behavior, and client-server interactions.
+* **Web Automation** — Automating complex workflows and working with web-based systems.
+* **Proxy Infrastructure** — Proxy integrations and networking for automation.
+* **Web Scraping** — Data extraction, processing, and custom scraping solutions.
+* **API Engineering** — Building integrations and programmatic interfaces.
+* **AI-Assisted Development** — Using modern AI coding tools to build, debug, and improve software.
 
-## 🎯 Experience & Projects
+## Projects & Products
 
-### Python Backend Development
-Built REST APIs using FastAPI and Flask, implemented database systems with SQL, and created scalable backend architectures for various applications.
+### DraxonCloud
 
-### Automation & Bots
-Developed Discord and Telegram bots for community management, automated data collection pipelines, and workflow automation scripts.
+A unified platform bringing multiple automation services together through one API and dashboard.
 
-### Minecraft Modding
-Created and published multiple Minecraft mods on Modrinth and CurseForge, specializing in Fabric and Forge mod development with custom game mechanics.
+DraxonCloud aims to simplify integrations by providing developers with a common interface for supported services.
 
-## 🛠️ Services
+* Captcha-solving services
+* Temporary email services
+* Developer API access
+* Unified account and balance management
+* Additional automation services planned
 
-I am currently accepting commissions for:
+**Website:** [draxon.one](https://draxon.one)
 
-- Discord/Telegram Bots
-- Web Scrapers & Automation scripts
-- REST APIs (FastAPI/Flask)
-- Minecraft Fabric/Forge Mods
+### Automation & Developer Tools
 
-## 💖 Support My Work
+I build and maintain tools for web automation, application analysis, API integrations, and other developer-focused workflows.
 
-If you appreciate my open-source projects, mods, or tools, consider supporting me. Your support helps me continue creating and maintaining these projects for the community.
+My projects focus on practical functionality, streamlined integrations, and reducing repetitive work.
 
-### Crypto Donation Addresses
+## Tech Stack
 
-| Cryptocurrency | Address |
-|----------------|---------|
-| **Bitcoin (BTC)** | `bc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p7hpq5n` |
-| **Litecoin (LTC)** | `ltc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p6tmyvr` |
-| **Ethereum (ETH/ERC20)** | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558` |
-| **Solana (SOL)** | `Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL` |
-| **USDT (Polygon)** | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558` |
-| **USDT (BEP20)** | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558` |
-| **USDT (ERC20)** | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558` |
-| **USDT (Solana)** | `Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL` |
+![Python](https://img.shields.io/badge/Python-3572A5?style=flat-square\&logo=python\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square\&logo=git\&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat-square\&logo=windows\&logoColor=white)
 
-## 📞 Contact
+## Services
 
-### Hire Me
+Available for selected commissions:
 
-#### Telegram (Recommended)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/draxono)
+* Python automation and custom tooling
+* Web scraping and data extraction
+* Website analysis and reverse engineering
+* API integrations and custom clients
+* Discord and Telegram bots
+* Proxy integrations and automation workflows
+* AI-powered tools and integrations
 
-#### Discord
-`@draxon.v11` (Unstable / Slow Replies)
+**Contact:** [Telegram](https://t.me/draxono)
 
-## 🔗 Social Links
+## Support My Work
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DraxonV1)
-[![Modrinth](https://img.shields.io/badge/Modrinth-1bd96a?style=for-the-badge&logo=modrinth&logoColor=white)](https://modrinth.com/user/DraxonV1)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@DraxonV1)
+If you find my projects useful, you can support their development using the addresses below.
 
-## 🌐 Visit My Website
+| Cryptocurrency | Network         | Address                                        |
+| -------------- | --------------- | ---------------------------------------------- |
+| Bitcoin (BTC)  | Bitcoin         | `bc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p7hpq5n`   |
+| Litecoin (LTC) | Litecoin        | `ltc1q0ad4yn3c7e5lsfrc8s86xzd7xzuq0p7p6tmyvr`  |
+| Ethereum (ETH) | Ethereum        | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558`   |
+| Solana (SOL)   | Solana          | `Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL` |
+| USDT           | Polygon         | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558`   |
+| USDT           | BNB Smart Chain | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558`   |
+| USDT           | Ethereum        | `0x02b2F37974c7Ba988f4Cc150AF3711121B88f558`   |
+| USDT           | Solana          | `Fu2nS7BfUV5tLsGhhpPWDvXK8JuArag2zxDkL5Ly8SUL` |
 
-[https://devdraxon.in](https://devdraxon.in)
+Always verify the network before sending cryptocurrency.
 
+## Connect
+
+* **GitHub:** [DraxonV1](https://github.com/DraxonV1)
+* **Website:** [devdraxon.in](https://devdraxon.in)
+* **DraxonCloud:** [draxon.one](https://draxon.one)
+* **Telegram:** [@draxono](https://t.me/draxono)
+* **Discord:** `unstable, use telegram`
+* **YouTube:** [DraxonV1](https://www.youtube.com/@DraxonV1)
+
+contact me on telegram if you need any custom script, automation or something.. 
 ---
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=DraxonV1&theme=vue-dark&date_format=j%2Fn%5B%2FY%5D&mode=weekly)](https://git.io/streak-stats)
+![GitHub Streak](https://streak-stats.demolab.com?user=DraxonV1\&theme=vue-dark\&date_format=j%2Fn%5B%2FY%5D\&mode=weekly)
 
-&copy; 2026 Draxon (DraxonV1). All rights reserved.
+*Using AI to Code is also a skill you little keyboard spammer*
 
-[Website](https://devdraxon.in) &bull; [GitHub](https://github.com/DraxonV1) &bull; [Telegram](https://t.me/draxono) &bull; [Modrinth](https://modrinth.com/user/DraxonV1) &bull; [YouTube](https://www.youtube.com/@DraxonV1)
-
----
-
-### Keywords
-
-Python Developer, Python Programmer, Minecraft Modder, Minecraft Mod Developer, Automation Expert, Bot Developer, Discord Bot Developer, Telegram Bot Developer, Web Scraper, API Developer, FastAPI Developer, Flask Developer, Backend Developer, Full Stack Developer, Java Developer, Fabric Modding, Forge Modding, Open Source Developer, GitHub Developer, Modrinth Creator
+© 2026 Draxon. All rights reserved.
